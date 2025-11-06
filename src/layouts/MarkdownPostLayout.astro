@@ -2,22 +2,35 @@
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
+
+let isImage: boolean = false;
+
+if (frontmatter.image) {
+  isImage = true;
+}
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>发布于：{frontmatter.pubDate.toString().slice(0,10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>作者：{frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-    <div class="tags">
-    {frontmatter.tags.map((tag: string) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
+  <h1>{frontmatter.title}</h1>
+  <p>发布于：{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>作者：{frontmatter.author}</p>
+  { isImage ? <img src={frontmatter.image?.url} width="100%" alt={frontmatter.image?.alt} /> : <div></div> }
+  
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
   </div>
-    <slot />
+  <slot />
 </BaseLayout>
 <style>
   a {
-    color: #00539F;
+    color: #00539f;
   }
 
   .tags {
@@ -28,9 +41,9 @@ const { frontmatter } = Astro.props;
   .tag {
     margin: 0.25em;
     border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
     font-size: 1.15em;
-    background-color: #F8FCFD;
+    background-color: #f8fcfd;
   }
 </style>

@@ -1,12 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import Greeting from '../components/Greeting';
 const pageTitle = "首页";
 ---
 
 
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>This is a good title.</h2>
+	<div id="home">
+		<h2>This is a good title.</h2>
+		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+	</div>
 </BaseLayout>
 
+<style>
+	#home {
+		min-height: 100vh;
+	}
+</style>
