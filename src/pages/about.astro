@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import Prose from "@/components/Prose.astro";
 const pageTitle = "关于我";
 
 const identity = {
@@ -18,54 +18,54 @@ const goal = 3;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div id="about">
-        <h2>……和我的新 Astro 网站！</h2>
-
-        <p>
-            我正在学习 Astro
-            的入门教程。这是我网站上的第二个页面，也是我自己建立的第一页面！
-        </p>
-
-        <p>
-            随着我完成更多教程，该站点将更新，所以请继续查看我的旅程将如何进行吧！
-        </p>
-
-        <p>以下是关于我的几个事实：</p>
-        <ul>
-            <li>I'm {identity.firstName}.</li>
-            <li>
-                Live in {identity.country}。我的职业是{identity.occupation}。
-            </li>
-            {
-                identity.hobbies.length >= 2 && (
-                    <li>
+    <div class="mx-auto max-w-5xl px-6 md:px-10 py-10 min-h-screen">
+        <Prose>
+            <h2>这是我的新 Astro 博客网站！</h2>
+            
+            <p>
+                我正在学习 Astro
+                的入门教程。这是我网站上的第二个页面，也是我自己建立的第一页面！
+            </p>
+            
+            <p>
+                随着我完成更多教程，该站点将更新，所以请继续查看我的旅程将如何进行吧！
+            </p>
+            
+            <p>以下是关于我的几个事实：</p>
+            <ul>
+                <li>I'm {identity.firstName}.</li>
+                <li>
+                    Live in {identity.country}。我的职业是{identity.occupation}。
+                </li>
+                {
+                    identity.hobbies.length >= 2 && (
+                        <li>
                         我的两个习惯：{identity.hobbies[0]}和
                         {identity.hobbies[1]}
                     </li>
                 )
             }
-        </ul>
-        <p>我的技能是：</p>
-        <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-
-        {happy && <p>我非常乐意学习 Astro！</p>}
-
-        {finished && <p>我完成了这节教程！</p>}
-
-        {
-            goal === 3 ? (
-                <p>我的目标是在三天内完成。</p>
-            ) : (
-                <p>我的目标不是 3 天。</p>
-            )
-        }
+            </ul>
+            <p>我的技能是：</p>
+            <ul>
+                {skills.map((skill) => <li>{skill}</li>)}
+            </ul>
+            
+            {happy && <p>我非常乐意学习 Astro！</p>}
+            
+            {finished && <p>我完成了这节教程！</p>}
+            
+            {
+                goal === 3 ? (
+                    <p>我的目标是在三天内完成。</p>
+                ) : (
+                    <p>我的目标不是 3 天。</p>
+                )
+            }
+            <p>现在我要对网站的整体样式进行设计，美观网页布局。</p>
+        </Prose>
     </div>
 </BaseLayout>
 
 <style>
-    #about {
-        min-height: 100vh;
-    }
 </style>

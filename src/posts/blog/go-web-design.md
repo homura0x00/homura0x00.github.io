@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../layouts/MarkdownPostLayout.astro
 title: 'Go Web应用设计：业务设计'
 pubDate: 2025-11-06
 description: '一篇关于 Go-Web 开发的通用设计。'

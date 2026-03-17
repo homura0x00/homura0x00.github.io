@@ -1,0 +1,17 @@
+---
+const pageTitle = "Demo Page";
+import Prose from '@/components/Prose.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectList from '@/components/project-list';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div id="demo" class="md:max-w-5xl my-20 mx-auto px-10">
+        <Prose>
+            <h2>项目</h2>
+        </Prose>
+        <div class="mt-10">
+            <ProjectList />
+        </div>
+    </div> 
+</BaseLayout>

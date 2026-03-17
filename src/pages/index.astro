@@ -1,20 +1,40 @@
 ---
+import { ButtonGroup } from '@/components/ui/button-group';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "首页";
+import { Button } from '@/components/ui/button';
+import MyAvatar from '@/components/MyAvatar';
+import { Github, Rss } from 'lucide-react';
+import HomeLinks from '@/components/home-links';
+const pageTitle = "Home";
 ---
 
 
-
 <BaseLayout pageTitle={pageTitle}>
-	<div id="home">
-		<h2>This is a good title.</h2>
-		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+	<div id="home" class="relative mx-auto mt-30 min-w-0 max-w-7xl flex flex-col-reverse items-center lg:mt-0 lg:h-screen lg:flex lg:flex-row lg:px-8">
+		<div class="flex flex-col  justify-center mt-20 w-full lg:mt-0 lg:w-1/2 lg:h-1/2">
+			<div class="group relative leading-[4] text-center lg:text-left **:inline-block">
+				<h1 class="font-light text-4xl">Hi, I'm</h1>
+				<h1 class="font-medium mx-2 text-4xl"> homura</h1>
+				<h1 class="font-medium text-4xl">.</h1>
+				<br />
+				<h1 class="font-light text-4xl">A Full Stack</h1>
+				<code class="font-medium mx-2 text-3xl p-1 rounded">
+						&lt;Developer /&gt;
+				</code>
+				<br />
+				<h3 class="font-light text-2xl text-zinc-500">from China</h3>
+			</div>
+			<div class="center mt-10 flex flex-wrap gap-8 gap-y-6 mx-auto lg:mx-0 lg:gap-y-4 lg:mt-14 lg:justify-start">
+				<HomeLinks client:load />
+			</div>
+		</div>
+
+		<div class="flex w-full justify-center lg:justify-end lg:w-1/2">
+			<img class="rounded-full" width="300" height="300" src="https://avatars.githubusercontent.com/u/61085099?v=4" alt="logo" />
+		</div>
+
 	</div>
+
 </BaseLayout>
 
-<style>
-	#home {
-		min-height: 100vh;
-	}
-</style>
+

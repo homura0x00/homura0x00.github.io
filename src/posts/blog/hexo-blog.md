@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../layouts/MarkdownPostLayout.astro
 title: 'hexo的博客搭建'
 pubDate: 2025-05-01
 description: '这是关于如何使用hexo编写博客和构建web博客的教程。'

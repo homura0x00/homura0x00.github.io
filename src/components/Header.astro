@@ -1,38 +1,68 @@
 ---
-import Menu from "./Menu.astro";
-import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+import BaseNavigation from "./Navigation";
+import MobileNavigation from "./MobileNavigation";
+import { HeaderModeToggle } from "./HeaderModeToggle";
+import MyAvatar from "@/components/MyAvatar";
 ---
 
-<header>
-    <nav>
-        <Navigation />
-        <div>
-            <ThemeIcon />
-            <Menu />
+<header id="main-header" class="flex z-50 fixed left-0 right-0 top-0 items-center transition-all duration-300 border-b border-transparent">
+    <div class="flex lg:max-w-7xl w-full mx-auto justify-between m-4 px-6 md:px-10 items-center">
+        <!-- Mobile Menu Button (Left) -->
+        <div class="md:hidden">
+            <MobileNavigation client:load />
         </div>
-    </nav>
+
+        <!-- Avatar (Center on Mobile, Left on Desktop) -->
+        <div class="flex-1 md:flex-none flex justify-center md:justify-start">
+            <a href="/">
+                <MyAvatar client:load uri="https://avatars.githubusercontent.com/u/61085099?v=4" title="@homura" />
+            </a>
+        </div>
+
+        <!-- Desktop Navigation (Center) -->
+        <div class="hidden md:block flex-1">
+            <div class="flex justify-center">
+                <BaseNavigation client:load />
+            </div>
+        </div>
+
+        <!-- Theme Toggle Button (Right) -->
+        <div class="flex-none">
+            <HeaderModeToggle client:load />
+        </div>
+    </div>
 </header>
 
-<style>
-header {
-    border-bottom: 1px solid gray;
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+<script>
+    function initHeader() {
+        const header = document.getElementById('main-header');
+        if (!header) return;
 
-nav {
-    display: flex;
-    width: 1080px;
-    margin: 0 auto;
-    justify-content: space-between;
-}
+        const updateHeader = () => {
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/70', 'dark:bg-zinc-950/70', 'backdrop-blur-md', 'shadow-sm', 'border-zinc-200/50', 'dark:border-zinc-800/50');
+                header.classList.remove('border-transparent');
+            } else {
+                header.classList.remove('bg-white/70', 'dark:bg-zinc-950/70', 'backdrop-blur-md', 'shadow-sm', 'border-zinc-200/50', 'dark:border-zinc-800/50');
+                header.classList.add('border-transparent');
+            }
+        };
 
-div {
-   display: flex;
-   justify-content: space-between;
- }
-</style>
+        // Initial check
+        updateHeader();
+
+        // Listen for scroll
+        window.addEventListener('scroll', updateHeader);
+        
+        // Cleanup function for Astro transitions
+        return () => {
+            window.removeEventListener('scroll', updateHeader);
+        };
+    }
+
+    // Run on initial load
+    initHeader();
+
+    // Run on view transitions
+    document.addEventListener('astro:page-load', initHeader);
+</script>

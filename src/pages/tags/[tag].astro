@@ -1,28 +1,47 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-    const allPosts = Object.values(
-        import.meta.glob("../posts/*.md", { eager: true }),
-    );
-    return [
-        { params: { tag: "astro" }, props: { posts: allPosts } },
-        { params: { tag: "successes" }, props: { posts: allPosts } },
-        { params: { tag: "community" }, props: { posts: allPosts } },
-        { params: { tag: "blogging" }, props: { posts: allPosts } },
-        { params: { tag: "setbacks" }, props: { posts: allPosts } },
-        { params: { tag: "learning in public" }, props: { posts: allPosts } },
-    ];
+    const blogPosts = await getCollection("blog");
+    const writeupPosts = await getCollection("writeup");
+    const allPosts = [...blogPosts, ...writeupPosts];
+    
+    // 获取所有唯一的标签
+    const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())].filter(Boolean) as string[];
+
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.data.tags?.includes(tag));
+        return {
+            params: { tag },
+            props: { posts: filteredPosts },
+        };
+    });
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
 ---
 
 <BaseLayout pageTitle={tag}>
-    <p>包含「{tag}」标签的文章</p>
-    <ul>
-        {filteredPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-    </ul>
+    <div class="mx-auto max-w-5xl px-6 md:px-10 py-10 min-h-screen">
+        <div class="mb-8 border-b pb-4">
+            <h2 class="text-3xl font-bold mb-2">标签：{tag}</h2>
+            <p class="text-zinc-500">共找到 {posts.length} 篇包含「{tag}」标签的文章</p>
+        </div>
+        
+        <ul class="space-y-4">
+            {posts.map((post) => (
+                <li class="group">
+                    <a 
+                        href={`/${post.collection}/${post.id}`} 
+                        class="text-xl font-medium hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                        <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 group-hover:bg-primary transition-colors"></span>
+                        {post.data.title}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
 </BaseLayout>

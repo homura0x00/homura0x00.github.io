@@ -1,23 +1,20 @@
 ---
-import Socials from "./Socials.astro"
+import SwitchMode from "@/components/SwitchMode";
+import HelpLists from "./HelpLists";
 ---
 
-<footer>
-  <div>
-    <Socials platform="github" username="rabitIII" />
+<footer class="relative bg-pink-200 mt-32 py-6 dark:bg-gray-800">
+  <div class="px-6 sm:px-8">
+    <div class="relative max-w-7xl mx-auto lg:px-8">
+      <div class="relative ">
+        <HelpLists client:load />
+      </div>
+      <div class="mt-12">
+        <p>&copy; 2023-2026</p>
+      </div>
+      <div class="mt-6 flex md:absolute md:bottom-0 md:right-0 md:mt-0 md:flex-row">
+        <SwitchMode client:load />
+      </div>
+    </div>
   </div>
 </footer>
-
-<style>
-  footer {
-    margin: 0;
-    height: 70px;
-    padding-top: 20px;
-    background-color: gray;
-  }
-
-  footer div {
-    width: 762px;
-    margin: 0 auto;
-  }
-</style>

@@ -2,31 +2,61 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 const { pageTitle } = Astro.props;
 ---
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="https://avatars.githubusercontent.com/u/61085099?v=4" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ClientRouter />
   </head>
   <style>
     #slot {
-      max-width: 1080px;
-      margin: 80px auto 90px;
-
+      max-width: 1920px;
+      margin: 0 auto;
     }
   </style>
-  <body>
-    <Header />
-    <div id="slot" class="slot">
-      <slot />
-    </div>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
+  <body class="flex flex-col min-h-screen">
+      <Header />
+      <main id="main-content" class="grow pt-20">
+        <slot />
+      </main>
+      <Footer />
+
+    <script is:inline>
+      const getThemePreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'system';
+      };
+
+      const applyTheme = (theme) => {
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      const theme = getThemePreference();
+      applyTheme(theme);
+      
+      // 监听系统主题变化
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme') === 'system') {
+           applyTheme('system');
+        }
+      });
+      
+      // 监听 Client Router 页面切换，确保主题一致
+      document.addEventListener('astro:after-swap', () => {
+         applyTheme(localStorage.getItem('theme') || 'system');
+      });
     </script>
   </body>
 </html>

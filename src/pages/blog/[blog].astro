@@ -1,0 +1,22 @@
+---
+// src/pages/posts/[post].astro
+import PostLayout from '../../layouts/PostLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+// 获取路径参数
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+
+    return posts.map(post => ({
+        params: { blog: post.id },  // post.id 会是文件路径，如 "post1"
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<PostLayout frontmatter={post.data}>
+    <Content />
+</PostLayout>

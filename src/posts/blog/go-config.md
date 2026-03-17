@@ -1,6 +1,7 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../layouts/MarkdownPostLayout.astro
 title: 'Go Web应用设计: 应用配置和Response方法'
+slug: 'Go-Viper-Config'
 pubDate: 2025-11-06
 description: '一篇关于 Go-Web 开发的通用设计。'
 author: 'homura'
@@ -9,6 +10,8 @@ tags: ["blogging", "hexo"]
 
 
 ### 应用配置
+
+
 ~~~go
 package config
 

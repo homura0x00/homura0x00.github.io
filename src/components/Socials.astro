@@ -1,15 +1,14 @@
 ---
+import { Badge } from "@/components/ui/badge"
 const { platform, username } = Astro.props;
 ---
-
-<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
+<Badge>
+  <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
+</Badge>
 
 <style>
   a {
     padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    border-radius: 15px;
     text-decoration: none;
   }
 </style>

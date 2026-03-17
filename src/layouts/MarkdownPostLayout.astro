@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-
+import { Badge } from "@/components/ui/badge"
 const { frontmatter } = Astro.props;
 
 let isImage: boolean = false;
@@ -11,24 +11,33 @@ if (frontmatter.image) {
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
-  <p>发布于：{frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>作者：{frontmatter.author}</p>
-  { isImage ? <img src={frontmatter.image?.url} width="100%" alt={frontmatter.image?.alt} /> : <div></div> }
-  
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag: string) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
+  <div class="blog-post">
+    <h1>{frontmatter.title}</h1>
+    <p>发布于：{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>作者：{frontmatter.author}</p>
+    { isImage ? <img src={frontmatter.image?.url} width="100%" alt={frontmatter.image?.alt} /> : <div></div> }
+    
+    <div class="tags">
+      {
+        frontmatter.tags.map((tag: string) => (
+          <Badge>
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </Badge>
+        ))
+      }
+    </div>
+    <div class="my-4 prose">
+      <slot />
+    </div>
   </div>
-  <slot />
 </BaseLayout>
 <style>
+  .blog-post {
+    width: 980px;
+    margin: 80px auto 90px;
+    min-height: 100vh;
+  }
   a {
     color: #00539f;
   }
@@ -36,14 +45,5 @@ if (frontmatter.image) {
   .tags {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.2em 0.5em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
   }
 </style>
