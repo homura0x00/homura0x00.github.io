@@ -1,5 +1,5 @@
 ---
-title: "网页布局的“圣杯”：Sticky Footer 与整体架构设计"
+title: "网页布局的“圣杯”：Sticky Footer 与整体架构设计（Ai）"
 description: "探讨如何构建一个健壮的全局页面架构，解决页脚吸底、内容居中以及固定导航栏的占位问题。"
 pubDate: 2026-02-12
 author: "homura"

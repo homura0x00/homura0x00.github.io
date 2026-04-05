@@ -1,5 +1,5 @@
 ---
-title: "如何实现一个现代风格的磨砂玻璃 Header"
+title: "如何实现一个现代风格的磨砂玻璃 Header (Ai)"
 description: "详细拆解如何使用 Astro 和 Tailwind CSS 实现随着滚动变模糊的 Sticky Header，包含核心原理与代码实现。"
 pubDate: 2026-02-10
 author: "homura"

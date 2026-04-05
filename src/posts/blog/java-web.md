@@ -1,10 +1,10 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'React-Native: Expo框架应用设计'
+title: 'Java Web 学习小扎'
 pubDate: 2025-12-10
-description: '一篇关于 Go-Web 开发的通用设计。'
+description: 'Jav-Web 学习的零散记录。'
 author: 'homura'
-tags: ["blogging", "RN"]
+tags: ["blogging", "Java Web"]
 ---
 
 ## Java Web 快速开发

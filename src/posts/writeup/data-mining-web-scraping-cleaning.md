@@ -2,7 +2,7 @@
 layout: ../layouts/MarkdownPostLayout.astro
 title: '数据采集与清洗：从爬虫到数据挖掘的第一步'
 pubDate: 2026-02-17
-description: '用一个魔女文字小爬虫为例，系统复习数据采集与清洗的核心知识。'
+description: '用一个魔女文字小爬虫为例，系统复习数据采集与清洗的核心知识。(Ai 生成)'
 author: 'homura'
 tags: ["data-mining", "web-scraping", "python"]
 ---
