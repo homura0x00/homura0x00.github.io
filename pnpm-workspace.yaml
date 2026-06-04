@@ -1,0 +1,8 @@
+onlyBuiltDependencies:
+  - esbuild
+
+overrides:
+  picomatch@<2.3.2: '>=2.3.2'
+  postcss@<8.5.10: '>=8.5.10'
+  rollup@>=4.0.0 <4.59.0: '>=4.59.0'
+  smol-toml@<1.6.1: '>=1.6.1'

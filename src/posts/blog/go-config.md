@@ -1,13 +1,28 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'Go Web应用设计: 应用配置和Response方法'
+title: 'Go项目设计：配置文件的读取'
 slug: 'Go-Viper-Config'
 pubDate: 2025-11-06
-description: '一篇关于 Go-Web 开发的通用设计。'
+description: '以 Go-Web DI项目开发实例下的配置文件读取。'
 author: 'homura'
 tags: ["blogging", "hexo"]
 ---
 
+## 项目结构
+
+```bash
+|- project/
+|  |- cmd/
+|     |- server/app.go # DI注入根文件和应用启动主入口
+|
+|  |- configs/
+|     |- setting.yaml  # 配置文件
+|
+|  |- internal/
+|     |- config/
+|        |- config.go  # config 结构体
+|        |- load.go    # 配置读取
+```
 
 ### 应用配置
 

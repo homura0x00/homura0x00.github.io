@@ -7,8 +7,8 @@ import {
 } from "@/components/ui/breadcrumb.tsx";
 
 export function NavConnect({
-                             items
-                         }: {
+    items
+}: {
     items: {
         title: string,
         href: string,

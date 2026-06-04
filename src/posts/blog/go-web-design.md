@@ -7,61 +7,55 @@ author: 'homura'
 tags: ["blogging", "hexo"]
 ---
 
-## 技术栈
+### 技术栈
 
-- Gin + Gorm-Gen + MySQL
-
-## 业务设计
+- 开发框架：Gin + GormÂ
+- 数据库： MySQL + Redis
+- 权限验证：OAuth
 
 ### 项目结构
 
-~~~bash
+```bash
 |- project/
-|   |- cmd/v1/main.go
-|   |- internal/
-|       |- config/  # 读取相关配置文件的源码文件（如 *.yaml）
-|       |- handler/ 
-|       |- service/ 
-|       |- model/   # gen生成的数据库表映射文件
-|       |- query/   # gen生成数据库表对应的 CRUD 方法
+|  |- cmd/
+|     |- server/main.go
+|
+|  |- configs/          # 配置文件
+|
+|  |- internal/
+|     |- ...            
+|     |- handler/       # 业务封装层（处理请求、组装response）
+|     |- service/       # 数据库数据操作层
+|     |- utils/         # JWT、response结构体、业务状态码、密码加密等自定义业务工具
+```
 
-~~~
+#### DAL
 
-### 业务源码
-
-#### 核心业务
-
-~~~go
-// /model/dto/user.go
+```go
+// /dal/dto/user.go
 package dto
 
-type RegisterUserReq struct {
-    UserAccount     string  `json:"user_account"`
-    UserPassword    string  `json:"user_password"`
-    UserName        string  `json:"user_name"`
-}
-
-// /model/vo/user.go
 type UserVo struct {
 
 }
-~~~
+```
 
-~~~go
+#### Handler
+
+```go
 // user_handler.go
 type UserHandler struct {
-	userService *services.UserService
+    userService *services.UserService
 }
 
 // NewUserHandler 初始化：注入service实例
 func NewUserHandler(userService *services.UserService) *UserHandler {
-	return &UserHandler{
-		userService: userService,
+    return &UserHandler{
+        userService: userService,
 	}
 }
 
 func (h *UserHandler) Login(c *gin.Context) {
-
 	var login dto.LoginUserReq
 	if err := c.ShouldBindJSON(&login); err != nil {
 		res2.Error(c, res2.ParamCode, "参数格式错误")
@@ -105,9 +99,9 @@ func (h *UserHandler) Login(c *gin.Context) {
 	// （可选）SameSite=Strict 防CSRF
 	c.Header("Set-Cookie", c.Writer.Header().Get("Set-Cookie")+"; SameSite=Strict")
 }
-~~~
+```
 
-~~~go
+```go
 // user_service.go
 package service
 
@@ -146,4 +140,5 @@ func (s *UserService) Login(c *context.Context, req *dto.LoginUserReq) (*vo.User
 	return userVO, nil
 }
 
-~~~
+```
+
