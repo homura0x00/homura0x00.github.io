@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-z4jru4n3><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="https://avatars.githubusercontent.com/u/61085099?v=4"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v7.0.0"><title>数据采集与清洗：从爬虫到数据挖掘的第一步</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><style>a[data-astro-cid-ssdmjifj]{color:#00539f}.tags[data-astro-cid-ssdmjifj]{flex-wrap:wrap;display:flex}
+</style><link rel="stylesheet" href="/_astro/BaseLayout.BeW76I2E.css"></head><body class="flex flex-col min-h-screen" data-astro-cid-z4jru4n3><header id="main-header" class="flex z-50 fixed left-0 right-0 top-0 items-center transition-all duration-300 border-b border-transparent"><div class="flex lg:max-w-7xl w-full mx-auto justify-between m-4 px-6 md:px-10 items-center"><!-- Mobile Menu Button (Left) --><div class="md:hidden"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="ZrnGCS" prefix="r9" component-url="/_astro/MobileNavigation.DC9WCond.js" component-export="default" renderer-url="/_astro/client.Dwl67fpr.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;MobileNavigation&quot;,&quot;value&quot;:true}" await-children><button data-slot="sheet-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 md:hidden" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r9R_0_" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg><span class="sr-only">Toggle menu</span></button><!--astro:end--></astro-island></div><!-- Avatar (Center on Mobile, Left on Desktop) --><div class="flex-1 md:flex-none flex justify-center md:justify-start"><a href="/"><astro-island uid="ZpA8Ap" prefix="r10" component-url="/_astro/MyAvatar.BZ_LfNAx.js" component-export="default" renderer-url="/_astro/client.Dwl67fpr.js" props="{&quot;uri&quot;:[0,&quot;https://avatars.githubusercontent.com/u/61085099?v=4&quot;],&quot;title&quot;:[0,&quot;@homura&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;MyAvatar&quot;,&quot;value&quot;:true}" await-children><span data-slot="avatar" data-size="default" class="group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"><span data-slot="avatar-fallback" class="bg-muted text-muted-foreground flex size-full items-center justify-center rounded-full text-sm group-data-[size=sm]/avatar:text-xs">@homura</span></span><!--astro:end--></astro-island></a></div><!-- Desktop Navigation (Center) --><div class="hidden md:block flex-1"><div class="flex justify-center"><astro-island uid="1JVTuK" prefix="r11" component-url="/_astro/Navigation.jbldBLlt.js" component-export="default" renderer-url="/_astro/client.Dwl67fpr.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;BaseNavigation&quot;,&quot;value&quot;:true}" await-children><nav aria-label="Main" data-orientation="horizontal" dir="ltr" data-slot="navigation-menu" data-viewport="false" class="group/navigation-menu relative flex max-w-max flex-1 items-center justify-center"><div style="position:relative"><ul data-orientation="horizontal" data-slot="navigation-menu-list" class="group flex flex-1 list-none items-center justify-center gap-1" dir="ltr"><li data-slot="navigation-menu-item" class="relative m-1 px-1"><a data-slot="navigation-menu-link" class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&amp;_svg:not([class*=&#x27;text-&#x27;])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 mx-1" href="/" data-radix-collection-item="">Home</a></li><li data-slot="navigation-menu-item" class="relative m-1 px-1"><a data-slot="navigation-menu-link" class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&amp;_svg:not([class*=&#x27;text-&#x27;])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 mx-1" href="/tags" data-radix-collection-item="">Tags</a></li><li data-slot="navigation-menu-item" class="relative m-1 px-1"><button id="radix-_r11R_0_-trigger-radix-_r11R_r_" data-state="closed" aria-expanded="false" aria-controls="radix-_r11R_0_-content-radix-_r11R_r_" data-slot="navigation-menu-trigger" class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 group" data-radix-collection-item="">Posts<!-- --> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down relative top-px ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></li><li data-slot="navigation-menu-item" class="relative m-1 px-1"><a data-slot="navigation-menu-link" class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&amp;_svg:not([class*=&#x27;text-&#x27;])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 mx-1" href="/projects" data-radix-collection-item="">Project</a></li><li data-slot="navigation-menu-item" class="relative m-1 px-1"><a data-slot="navigation-menu-link" class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&amp;_svg:not([class*=&#x27;text-&#x27;])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 mx-1" href="/about" data-radix-collection-item="">About</a></li></ul></div></nav><!--astro:end--></astro-island></div></div><div class="flex-none"><button data-slot="button" data-variant="outline" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9"><a href="/login" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-door-open"><path d="M11 20H2"></path><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path><path d="M11 4H8a2 2 0 0 0-2 2v14"></path><path d="M14 12h.01"></path><path d="M22 20h-3"></path></svg></a></button></div> <!-- 占位元素，保持右侧按钮位置 --><!-- Theme Toggle Button (Right) --><!-- <div class="flex-none">
+            <HeaderModeToggle client:load />
+        </div> --></div></header><script type="module">function e(){let e=document.getElementById(`main-header`);if(!e)return;let t=()=>{window.scrollY>20?(e.classList.add(`bg-white/70`,`dark:bg-zinc-950/70`,`backdrop-blur-md`,`shadow-sm`,`border-zinc-200/50`,`dark:border-zinc-800/50`),e.classList.remove(`border-transparent`)):(e.classList.remove(`bg-white/70`,`dark:bg-zinc-950/70`,`backdrop-blur-md`,`shadow-sm`,`border-zinc-200/50`,`dark:border-zinc-800/50`),e.classList.add(`border-transparent`))};return t(),window.addEventListener(`scroll`,t),()=>{window.removeEventListener(`scroll`,t)}}e(),document.addEventListener(`astro:page-load`,e);</script><main id="main-content" class="grow pt-20" data-astro-cid-z4jru4n3>
+    <div class="mx-auto max-w-4xl px-6 md:px-10 py-10 min-h-screen" data-astro-cid-ssdmjifj><div class="prose dark:prose-invert max-w-none
+  prose-h1:font-bold prose-h1:text-xl
+  prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+  prose-headings:no-underline">
+            <h1 data-astro-cid-ssdmjifj>数据采集与清洗：从爬虫到数据挖掘的第一步</h1>
+        </div><div class="text-gray-400" data-astro-cid-ssdmjifj><p data-astro-cid-ssdmjifj>发布于：Tue Feb 17</p><p data-astro-cid-ssdmjifj>Description：<em data-astro-cid-ssdmjifj>用一个魔女文字小爬虫为例，系统复习数据采集与清洗的核心知识。(Ai 生成)</em></p><p data-astro-cid-ssdmjifj>作者：homura</p></div><div class="my-4" data-astro-cid-ssdmjifj></div><div class="tags" class="my-4" data-astro-cid-ssdmjifj><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/data-mining" data-astro-cid-ssdmjifj="">data-mining</a></span></div><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/web-scraping" data-astro-cid-ssdmjifj="">web-scraping</a></span></div><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/python" data-astro-cid-ssdmjifj="">python</a></span></div></div><div class="max-w-full my-4 prose dark:prose-invert" data-astro-cid-ssdmjifj>
+    <blockquote>
+<p>目标：复习「数据挖掘的入口阶段」——数据采集（爬虫）和数据清洗。<br>
+风格：偏实战，配合当前项目里的 <code>madoka_runes_scraper.py</code> 小脚本来理解。</p>
+</blockquote>
+<h2 id="阶段一爬虫基础">阶段一：爬虫基础</h2>
+<p>这一阶段重点是：<strong>把数据拿到手</strong>，但先不追求「多快好省」，而是「能稳定拿到」。</p>
+<h3 id="11-请求层基础以-python-requests-为例">1.1 请求层基础（以 Python <code>requests</code> 为例）</h3>
+<ul>
+<li>核心对象：<code>requests.get/post</code>、<code>params</code>、<code>data/json</code>、<code>timeout</code>、<code>Session</code>。</li>
+<li>常见要点：
+<ul>
+<li><strong>超时</strong>：一定要设 <code>timeout</code>，避免卡死。</li>
+<li><strong>编码</strong>：有些网站需要手动设 <code>resp.encoding</code>。</li>
+<li><strong>重定向</strong>：默认跟随，必要时检查 <code>resp.history</code>。</li>
+</ul>
+</li>
+</ul>
+<p>示例（伪代码）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> requests</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> requests.Session()</span></span>
+<span class="line"><span style="color:#E1E4E8">session.headers.update({</span></span>
+<span class="line"><span style="color:#9ECBFF">    "User-Agent"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"MyLearningSpider/0.1 (for personal study)"</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">resp </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> session.get(</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://example.com/api"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    params</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">"q"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"madoka"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#FFAB70">    timeout</span><span style="color:#F97583">=</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">resp.raise_for_status()</span></span>
+<span class="line"><span style="color:#E1E4E8">data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> resp.json()  </span><span style="color:#6A737D"># 如果是JSON接口</span></span></code></pre>
+<h3 id="12-html-解析与接口优先">1.2 HTML 解析与「接口优先」</h3>
+<p>通用原则：<strong>能走结构化接口（JSON、CSV、API），就不要先上 HTML 解析</strong>。</p>
+<ul>
+<li>优先顺序：
+<ul>
+<li>开放 API / 内部 JSON 接口；</li>
+<li>其后才是：HTML + 解析工具。</li>
+</ul>
+</li>
+<li>常见解析工具：
+<ul>
+<li><code>BeautifulSoup</code>：通过标签/类名筛选元素；</li>
+<li><code>lxml</code>（XPath）：适合结构稳定、复杂一点的页面；</li>
+<li><code>re</code>：只对特别简单、结构非常稳定的场景慎用。</li>
+</ul>
+</li>
+</ul>
+<p>动态页面（前端渲染）优先策略：</p>
+<ol>
+<li>打开浏览器开发者工具 Network 面板；</li>
+<li>手动操作页面，找到真正返回数据的接口；</li>
+<li>用脚本直接请求这些接口，而不是渲染整页。</li>
+</ol>
+<h3 id="13-用魔女文字小脚本理解api-优先">1.3 用魔女文字小脚本理解「API 优先」</h3>
+<p>当前项目中的 <code>madoka_runes_scraper.py</code> 做的事情：</p>
+<ul>
+<li>访问萌娘百科的 <strong>MediaWiki API</strong>（而不是直接爬 HTML）：
+<ul>
+<li><code>action=parse&amp;prop=images</code> 拿到词条中引用到的图片列表；</li>
+<li><code>action=query&amp;prop=imageinfo&amp;iiprop=url</code> 拿到每个图片的原始下载链接。</li>
+</ul>
+</li>
+<li>避免了直接解析 HTML 的各种细节变化，接口更稳定。</li>
+</ul>
+<p>这就是一个典型的「先找接口」的例子。</p>
+<hr>
+<h2 id="阶段二爬虫工程化与礼貌访问">阶段二：爬虫工程化与礼貌访问</h2>
+<p>这一阶段关注的是：<strong>怎么「文明」地爬</strong>，以及把爬虫写得更可靠。</p>
+<h3 id="21-礼貌访问爬虫伦理">2.1 礼貌访问（爬虫伦理）</h3>
+<p>几个基本原则：</p>
+<ul>
+<li><strong>尊重 robots.txt</strong>：虽然不是法律，但反映站点运营者的意图；</li>
+<li><strong>控制频率</strong>：不要高 QPS 猛打人家服务器；</li>
+<li><strong>声明身份</strong>：用合理的 User-Agent，标注用途和联系方式；</li>
+<li><strong>只抓需要的内容</strong>：明确范围，不做无意义的全站扫描。</li>
+</ul>
+<p>在 <code>madoka_runes_scraper.py</code> 里，我们做的事情包括：</p>
+<ul>
+<li>使用自定义 User-Agent，说明是个人学习用途；</li>
+<li>仅访问官方 API，且只抓「魔女文字」这一个词条相关的图片；</li>
+<li>增加了简单的限速参数 <code>--delay</code>，默认每个请求之间睡眠 1 秒。</li>
+</ul>
+<p>运行示例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 默认：每个请求之间 sleep 1 秒</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#9ECBFF"> madoka_runes_scraper.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 自定义：每个请求之间 sleep 2.5 秒</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#9ECBFF"> madoka_runes_scraper.py</span><span style="color:#79B8FF"> --delay</span><span style="color:#79B8FF"> 2.5</span></span></code></pre>
+<h3 id="22-工程化要素">2.2 工程化要素</h3>
+<p>常见的工程化要素包括：</p>
+<ul>
+<li><strong>重试机制</strong>：
+<ul>
+<li>针对临时网络问题、5xx 错误做有限次数重试；</li>
+<li>可以配合指数退避（1s、2s、4s……）。</li>
+</ul>
+</li>
+<li><strong>日志与监控</strong>：
+<ul>
+<li>记录每个 URL 的请求结果（成功、失败、耗时）；</li>
+<li>方便追踪问题和控制抓取范围。</li>
+</ul>
+</li>
+<li><strong>去重与断点续爬</strong>：
+<ul>
+<li>使用集合 / 数据库记录已经访问过的 URL；</li>
+<li>支持程序中断后从上次进度继续。</li>
+</ul>
+</li>
+<li><strong>存储策略</strong>：
+<ul>
+<li>小规模：JSON、CSV、本地文件系统；</li>
+<li>中等规模：SQLite、PostgreSQL 等关系型数据库；</li>
+<li>更大规模：分布式存储、消息队列等（脱离个人学习范畴）。</li>
+</ul>
+</li>
+</ul>
+<p><code>madoka_runes_scraper.py</code> 当前已经具备的工程化元素：</p>
+<ul>
+<li>使用 <code>requests.Session</code> 复用连接；</li>
+<li>限速参数 <code>delay</code> 控制基本频率；</li>
+<li>将「字符 -&gt; SVG 文件名列表」保存为 <code>char_to_svgs.json</code>，方便后续处理。</li>
+</ul>
+<hr>
+<h2 id="阶段三数据清洗data-cleaning">阶段三：数据清洗（Data Cleaning）</h2>
+<p>数据挖掘的经典经验是：<strong>80% 的时间花在清洗上</strong>。这一阶段的目标是：<br>
+把原始数据整理成「干净、统一、可用」的结构化数据表。</p>
+<h3 id="31-载入与初步检查">3.1 载入与初步检查</h3>
+<p>通常会用 <code>pandas</code> 来做交互式的数据探索与清洗：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pandas </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pd</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">df </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.read_csv(</span><span style="color:#9ECBFF">"data.csv"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">df.head()</span></span>
+<span class="line"><span style="color:#E1E4E8">df.info()</span></span>
+<span class="line"><span style="color:#E1E4E8">df.describe()</span></span></code></pre>
+<p>其中：</p>
+<ul>
+<li><code>head()</code>：看前几行，确认数据大致长什么样；</li>
+<li><code>info()</code>：看列类型、非空数量，了解缺失情况；</li>
+<li><code>describe()</code>：看数值特征的统计特性。</li>
+</ul>
+<h3 id="32-处理缺失值">3.2 处理缺失值</h3>
+<p>步骤：</p>
+<ol>
+<li>
+<p>查看缺失分布：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">df.isna().sum()</span></span></code></pre>
+</li>
+<li>
+<p>处理方式：</p>
+<ul>
+<li><strong>删除</strong>：对信息量极少、缺失非常严重的列，可以直接删；</li>
+<li><strong>填补</strong>：
+<ul>
+<li>类别变量：填 <code>"unknown"</code>；</li>
+<li>数值变量：填均值/中位数/0，或使用模型插值。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>示例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># 删除某些缺失列很多的列</span></span>
+<span class="line"><span style="color:#E1E4E8">df </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df.drop(</span><span style="color:#FFAB70">columns</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"useless_col"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 数值列用中位数填补</span></span>
+<span class="line"><span style="color:#E1E4E8">df[</span><span style="color:#9ECBFF">"age"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[</span><span style="color:#9ECBFF">"age"</span><span style="color:#E1E4E8">].fillna(df[</span><span style="color:#9ECBFF">"age"</span><span style="color:#E1E4E8">].median())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 类别列缺失填 "unknown"</span></span>
+<span class="line"><span style="color:#E1E4E8">df[</span><span style="color:#9ECBFF">"city"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[</span><span style="color:#9ECBFF">"city"</span><span style="color:#E1E4E8">].fillna(</span><span style="color:#9ECBFF">"unknown"</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<h3 id="33-处理异常值">3.3 处理异常值</h3>
+<p>常见做法：</p>
+<ul>
+<li>业务规则过滤：比如年龄必须在 [0, 120]；</li>
+<li>统计规则过滤：比如使用箱线图（IQR）找出极端值：</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">Q1 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[</span><span style="color:#9ECBFF">"value"</span><span style="color:#E1E4E8">].quantile(</span><span style="color:#79B8FF">0.25</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">Q3 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[</span><span style="color:#9ECBFF">"value"</span><span style="color:#E1E4E8">].quantile(</span><span style="color:#79B8FF">0.75</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">IQR</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Q3 </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Q1</span></span>
+<span class="line"><span style="color:#E1E4E8">mask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (df[</span><span style="color:#9ECBFF">"value"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> Q1 </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1.5</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> IQR</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> (df[</span><span style="color:#9ECBFF">"value"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">&#x3C;=</span><span style="color:#E1E4E8"> Q3 </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1.5</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> IQR</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">df </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[mask]</span></span></code></pre>
+<h3 id="34-文本与类别清洗">3.4 文本与类别清洗</h3>
+<ul>
+<li>文本标准化：
+<ul>
+<li>去除前后空格：<code>str.strip()</code>；</li>
+<li>统一大小写：<code>str.lower()</code> 或 <code>str.upper()</code>；</li>
+<li>去掉 HTML 标签：正则或 <code>BeautifulSoup(text).get_text()</code>。</li>
+</ul>
+</li>
+<li>正则抽取有用信息：
+<ul>
+<li>从字符串中抽邮箱/手机号/ID 等；</li>
+<li>从路径/文件名中解析字段。</li>
+</ul>
+</li>
+</ul>
+<p>在魔女文字的例子里：</p>
+<ul>
+<li>我们从 SVG 文件名中用正则抽取字符信息：
+<ul>
+<li>例如 <code>MadokaRunes_A_Archaic.svg</code>；</li>
+<li>可以解析出：<code>character = "A"</code>，<code>style = "Archaic"</code>，<code>filename = ...</code>。</li>
+</ul>
+</li>
+<li>这一步其实就是一种「特定领域的文本清洗」。</li>
+</ul>
+<h3 id="35-格式与类型统一">3.5 格式与类型统一</h3>
+<ul>
+<li>
+<p>日期时间：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">df[</span><span style="color:#9ECBFF">"created_at"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pd.to_datetime(df[</span><span style="color:#9ECBFF">"created_at"</span><span style="color:#E1E4E8">])</span></span></code></pre>
+</li>
+<li>
+<p>类别变量：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">df[</span><span style="color:#9ECBFF">"gender"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> df[</span><span style="color:#9ECBFF">"gender"</span><span style="color:#E1E4E8">].astype(</span><span style="color:#9ECBFF">"category"</span><span style="color:#E1E4E8">)</span></span></code></pre>
+</li>
+<li>
+<p>数值变量：</p>
+<ul>
+<li>去掉货币符号、千位分隔符后再转为数值；</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">df[</span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    df[</span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    .str.replace(</span><span style="color:#F97583">r</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">[$,]</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">regex</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    .astype(</span><span style="color:#79B8FF">float</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span></code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="阶段四从清洗到简单特征工程">阶段四：从清洗到简单特征工程</h2>
+<p>数据清洗之后，通常会进入一个「轻度特征工程」阶段，为建模做准备。</p>
+<h3 id="41-特征构造">4.1 特征构造</h3>
+<p>常见的特征构造方式：</p>
+<ul>
+<li><strong>计数特征</strong>：
+<ul>
+<li>比如一篇文章的词数、链接数、图片数；</li>
+<li>在魔女文字例子中，可以是：某篇文本中使用了多少种不同魔女字符。</li>
+</ul>
+</li>
+<li><strong>统计特征</strong>：
+<ul>
+<li>某个数值列在某一分组下的平均、方差、最大最小值；</li>
+<li>例如每个用户在一周内的访问次数、平均停留时间。</li>
+</ul>
+</li>
+<li><strong>类别编码</strong>：
+<ul>
+<li>One-Hot 编码：<code>pd.get_dummies(df["category"])</code>；</li>
+<li>或使用目标编码等更复杂方法（入门阶段不必强求）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-切分训练测试集与简单模型">4.2 切分训练/测试集与简单模型</h3>
+<p>这部分已经开始偏向「传统数据挖掘/机器学习」：</p>
+<ul>
+<li>使用 <code>sklearn.model_selection.train_test_split</code> 划分训练集/测试集；</li>
+<li>使用简单模型做练习：
+<ul>
+<li>回归：线性回归、随机森林回归；</li>
+<li>分类：逻辑回归、随机森林、XGBoost 等。</li>
+</ul>
+</li>
+</ul>
+<p>最重要的不是模型有多复杂，而是走一遍完整流程：</p>
+<ol>
+<li>明确问题（回归 / 分类 / 排序 / 聚类等）；</li>
+<li>采集数据（爬虫 / 日志 / 开放数据集）；</li>
+<li>清洗与特征工程；</li>
+<li>训练模型并评估；</li>
+<li>反过来再看：数据是否有偏、清洗是否合理。</li>
+</ol>
+<hr>
+<h2 id="小结与练习建议">小结与练习建议</h2>
+<p>可以用当前的魔女文字小爬虫作为一个完整练习的起点：</p>
+<ol>
+<li>使用 <code>madoka_runes_scraper.py</code> 下载 SVG，并生成 <code>char_to_svgs.json</code>；</li>
+<li>写一个小脚本：
+<ul>
+<li>读取 <code>char_to_svgs.json</code>；</li>
+<li>解析每个文件名中的字符和风格（古代体/现代体/音乐体等）；</li>
+<li>清洗成表格：<code>character</code>, <code>style</code>, <code>filename</code>, <code>url(optional)</code>；</li>
+<li>导出为 CSV。</li>
+</ul>
+</li>
+<li>在 Jupyter Notebook 里用 <code>pandas</code> 读这个 CSV：
+<ul>
+<li>统计每种风格中不同字符的数量；</li>
+<li>可视化频率分布（例如用 <code>matplotlib</code> / <code>seaborn</code>）。</li>
+</ul>
+</li>
+</ol>
+<p>完成这一套之后，基本就把「采集 → 清洗 → 简单分析」的闭环跑通了一遍，是进入更深层数据挖掘（特征工程、建模）的一个很好的起点。</p>
+
+</div></div>
+</main><footer class="relative bg-pink-200 mt-32 py-6 dark:bg-gray-800"><div class="px-6 sm:px-8"><div class="relative max-w-7xl mx-auto lg:px-8"><div class="relative "><astro-island uid="Z1d0xrT" prefix="r12" component-url="/_astro/index.CkL94gOY.js" component-export="default" renderer-url="/_astro/client.Dwl67fpr.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;HelpLists&quot;,&quot;value&quot;:true}" await-children><div class="m-2 flex flex-col md:flex-row gap-4"><nav aria-label="breadcrumb" data-slot="breadcrumb"><ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 font-bold">About</li><li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 mr-1"><a data-slot="breadcrumb-link" class="hover:text-foreground transition-colors" href="/about">关于我</a></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 mr-1"><a data-slot="breadcrumb-link" class="hover:text-foreground transition-colors" href="/site">关于站点</a></li></ol></nav><nav aria-label="breadcrumb" data-slot="breadcrumb"><ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 font-bold">Connect</li><li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 mr-1"><a data-slot="breadcrumb-link" class="hover:text-foreground transition-colors" href="https://www.bilibili.com" target="_blank">Bilibili</a></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5 mr-1"><a data-slot="breadcrumb-link" class="hover:text-foreground transition-colors" href="https://github.com/homura0x00" target="_blank">Github</a></li></ol></nav></div><!--astro:end--></astro-island></div><div class="mt-12"><p>&copy; 2023-2026</p></div><div class="mt-6 flex md:absolute md:bottom-0 md:right-0 md:mt-0 md:flex-row"><astro-island uid="13zuaf" prefix="r13" component-url="/_astro/SwitchMode.O9RsH6U-.js" component-export="default" renderer-url="/_astro/client.Dwl67fpr.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SwitchMode&quot;,&quot;value&quot;:true}" await-children><div class="flex items-center gap-1 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-1"><button data-slot="button" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 size-9 rounded-full h-8 w-8 transition-all text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun h-4 w-4" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><span class="sr-only">Light</span></button><button data-slot="button" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 rounded-full h-8 w-8 transition-all bg-sky-100 text-sky-500 dark:bg-sky-500/20 dark:text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog h-4 w-4" aria-hidden="true"><path d="M12 17v4"></path><path d="m14.305 7.53.923-.382"></path><path d="m15.228 4.852-.923-.383"></path><path d="m16.852 3.228-.383-.924"></path><path d="m16.852 8.772-.383.923"></path><path d="m19.148 3.228.383-.924"></path><path d="m19.53 9.696-.382-.924"></path><path d="m20.772 4.852.924-.383"></path><path d="m20.772 7.148.924.383"></path><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><path d="M8 21h8"></path><circle cx="18" cy="6" r="3"></circle></svg><span class="sr-only">System</span></button><button data-slot="button" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 size-9 rounded-full h-8 w-8 transition-all text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon h-4 w-4" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg><span class="sr-only">Dark</span></button></div><!--astro:end--></astro-island></div></div></div></footer><script>
+      const getThemePreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return 'system';
+      };
+
+      const applyTheme = (theme) => {
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      const theme = getThemePreference();
+      applyTheme(theme);
+      
+      // 监听系统主题变化
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme') === 'system') {
+           applyTheme('system');
+        }
+      });
+      
+      // 监听 Client Router 页面切换，确保主题一致
+      document.addEventListener('astro:after-swap', () => {
+         applyTheme(localStorage.getItem('theme') || 'system');
+      });
+    </script></body></html>
