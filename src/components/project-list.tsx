@@ -48,6 +48,7 @@ export default function ProjectList() {
                                 alt={project.name}
                                 className="w-full h-32 object-cover rounded-t-md"
                             />
+                            <span className="absolute top-2 left-2 bg-white/80 dark:bg-black/80 text-sm px-2 py-1 rounded">{project.name}</span>
                         </CardHeader>
                         <CardFooter>
                             <CardTitle>{project.name}</CardTitle>

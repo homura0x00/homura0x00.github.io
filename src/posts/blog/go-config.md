@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
 title: 'Go项目设计：配置文件的读取'
-slug: 'Go-Viper-Config'
+slug: 'read-config-file'
 pubDate: 2025-11-06
 description: '以 Go-Web DI项目开发实例下的配置文件读取。'
 author: 'homura'
