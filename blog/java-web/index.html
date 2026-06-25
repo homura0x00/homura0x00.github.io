@@ -7,39 +7,290 @@
   prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
   prose-headings:no-underline">
             <h1 data-astro-cid-ssdmjifj>Java Web 学习小扎</h1>
-        </div><div class="text-gray-400" data-astro-cid-ssdmjifj><p data-astro-cid-ssdmjifj>发布于：Wed Dec 10</p><p data-astro-cid-ssdmjifj>Description：<em data-astro-cid-ssdmjifj>Jav-Web 学习的零散记录。</em></p><p data-astro-cid-ssdmjifj>作者：homura</p></div><div class="my-4" data-astro-cid-ssdmjifj></div><div class="tags" class="my-4" data-astro-cid-ssdmjifj><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/blogging" data-astro-cid-ssdmjifj="">blogging</a></span></div><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/Java Web" data-astro-cid-ssdmjifj="">Java Web</a></span></div></div><div class="max-w-full my-4 prose dark:prose-invert" data-astro-cid-ssdmjifj>
-    <h2 id="java-web-快速开发">Java Web 快速开发</h2>
-<h3 id="依赖">依赖</h3>
+        </div><div class="text-gray-400" data-astro-cid-ssdmjifj><p data-astro-cid-ssdmjifj>发布于：Wed Dec 10</p><p data-astro-cid-ssdmjifj>Description：<em data-astro-cid-ssdmjifj>Java Web 的学习笔记。</em></p><p data-astro-cid-ssdmjifj>作者：homura</p></div><div class="my-4" data-astro-cid-ssdmjifj></div><div class="tags" class="my-4" data-astro-cid-ssdmjifj><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/blogging" data-astro-cid-ssdmjifj="">blogging</a></span></div><div class="m-2" data-astro-cid-ssdmjifj><span data-slot="badge" data-variant="secondary" class="inline-flex items-center justify-center rounded-full border border-transparent px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90" data-astro-cid-ssdmjifj="true"><a href="/tags/Java Web" data-astro-cid-ssdmjifj="">Java Web</a></span></div></div><div class="max-w-full my-4 prose dark:prose-invert" data-astro-cid-ssdmjifj>
+    <p><strong>依赖</strong></p>
 <ul>
 <li>Spring Web</li>
 <li>Mybatis plus</li>
 <li>Lombok</li>
 <li>MySQL</li>
 </ul>
-<h3 id="项目结构">项目结构</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#9ECBFF">```</span><span style="color:#B392F0">bash</span></span>
-<span class="line"><span style="color:#F97583">|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> myproject</span></span>
+<p><strong>项目结构</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> myproject</span></span>
 <span class="line"><span style="color:#F97583">	|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> src/.../[youbackname]</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> annotation </span><span style="color:#6A737D"># 注解</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> aop </span><span style="color:#6A737D"># aop切面，常用于user role鉴权</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> common </span><span style="color:#6A737D"># 常用方法</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> constant </span><span style="color:#6A737D">#</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> controllers</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> exception </span><span style="color:#6A737D"># 通用异常处理</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> mapper </span><span style="color:#6A737D"># mybatis 依赖使用</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> models</span></span>
-<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> services</span></span>
-<span class="line"><span style="color:#9ECBFF">		[yourprojectname]</span><span style="color:#B392F0">Application.java</span></span></code></pre>
-<h3 id="aop切面设计">aop切面设计</h3>
-<p><code>annotation/AuthCheck.java</code></p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"></span>
-<span class="line"><span style="color:#F97583">public</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">interface</span><span style="color:#F97583"> AuthCheck</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> annotation/</span><span style="color:#6A737D">                          # 注解定义层</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> aop/</span><span style="color:#6A737D">                                 # aop切面，示例中用于用户角色role鉴权</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> common/</span><span style="color:#6A737D">                              # 常用方法（请求响应体封装）</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> constant/</span><span style="color:#E1E4E8">                            </span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> controllers/</span><span style="color:#6A737D">                         # http 处理层</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> exception/</span><span style="color:#6A737D">                           # 通用异常处理</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> mapper/</span><span style="color:#6A737D">                              # mybatis 依赖使用</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> models/</span><span style="color:#6A737D">                              # 业务数据模型</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> services/</span><span style="color:#6A737D">                            # 数据操作层</span></span>
+<span class="line"><span style="color:#F97583">		|</span><span style="color:#B392F0">-</span><span style="color:#E1E4E8"> [yourprojectname]Application.java    </span><span style="color:#6A737D"># 程序主入口</span></span></code></pre>
+<hr>
+<h2 id="一通用设计">一、通用设计</h2>
+<h3 id="11-异常处理器">1.1. 异常处理器</h3>
+<p><strong>业务码</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.exception;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lombok.Getter;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Getter</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> enum</span><span style="color:#B392F0"> ErrorCode</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">    SUCCESS</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    PARAMS_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">40000</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"请求参数错误"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    NOT_LOGIN_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">40100</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"未登录"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    NO_AUTH_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">40101</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"无权限"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    NOT_FOUND_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">40400</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"请求数据不存在"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    FORBIDDEN_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">40300</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"禁止访问"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    SYSTEM_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50000</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"系统内部异常"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#79B8FF">    OPERATION_ERROR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50001</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"操作失败"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 状态码</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 信息</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> String message;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    ErrorCode</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> code</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.code </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.message </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> message;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>业务码工具类</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.exception;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lombok.Getter;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * 自定义业务异常</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Getter</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> BusinessException</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> RuntimeException</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 错误码</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> code</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(message);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.code </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(errorCode.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.code </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> errorCode.</span><span style="color:#B392F0">getCode</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">(message);</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.code </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> errorCode.</span><span style="color:#B392F0">getCode</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>异常处理工具类</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.exception;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * 异常处理工具类</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ThrowUtils</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 条件成立则抛异常</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> condition</span><span style="color:#6A737D">        条件</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> runtimeException</span><span style="color:#6A737D"> 异常</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> throwIf</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">boolean</span><span style="color:#FFAB70"> condition</span><span style="color:#E1E4E8">, RuntimeException </span><span style="color:#FFAB70">runtimeException</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (condition) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#E1E4E8"> runtimeException;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 条件成立则抛异常</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> condition</span><span style="color:#6A737D"> 条件</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> errorCode</span><span style="color:#6A737D"> 错误码</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> throwIf</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">boolean</span><span style="color:#FFAB70"> condition</span><span style="color:#E1E4E8">, ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">        throwIf</span><span style="color:#E1E4E8">(condition, </span><span style="color:#F97583">new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(errorCode));</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 条件成立则抛异常</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> condition</span><span style="color:#6A737D"> 条件</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> errorCode</span><span style="color:#6A737D"> 错误码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> message</span><span style="color:#6A737D"> 错误信息</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> throwIf</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">boolean</span><span style="color:#FFAB70"> condition</span><span style="color:#E1E4E8">, ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">        throwIf</span><span style="color:#E1E4E8">(condition, </span><span style="color:#F97583">new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(errorCode, message));</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>顶层的全局异常处理器</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.exception;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.yourprojectname.common.BaseResponse;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.yourprojectname.common.ResultUtils;</span></span>
+<span class="line"><span style="color:#6A737D">// ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * 全局异常处理器</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestControllerAdvice</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Slf4j</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> GlobalExceptionHandler</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">ExceptionHandler</span><span style="color:#E1E4E8">(NotLoginException.class)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">notLoginException</span><span style="color:#E1E4E8">(NotLoginException </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"NotLoginException"</span><span style="color:#E1E4E8">, e);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(ErrorCode.NOT_LOGIN_ERROR, e.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">ExceptionHandler</span><span style="color:#E1E4E8">(NotPermissionException.class)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">notPermissionExceptionHandler</span><span style="color:#E1E4E8">(NotPermissionException </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"NotPermissionException"</span><span style="color:#E1E4E8">, e);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(ErrorCode.NO_AUTH_ERROR, e.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">ExceptionHandler</span><span style="color:#E1E4E8">(BusinessException.class)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">businessExceptionHandler</span><span style="color:#E1E4E8">(BusinessException </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"BusinessException"</span><span style="color:#E1E4E8">, e);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(e.</span><span style="color:#B392F0">getCode</span><span style="color:#E1E4E8">(), e.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">ExceptionHandler</span><span style="color:#E1E4E8">(RuntimeException.class)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">businessExceptionHandler</span><span style="color:#E1E4E8">(RuntimeException </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"RuntimeException"</span><span style="color:#E1E4E8">, e);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(ErrorCode.SYSTEM_ERROR, </span><span style="color:#9ECBFF">"系统错误"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="12-response-响应数据结构设计">1.2. Response 响应数据结构设计</h3>
+<blockquote>
+<p>BaseResponse 响应体的基础结构 -&gt; controllers层使用的响应工具装</p>
+</blockquote>
+<p><strong>全局响应</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.common;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.yourprojectname.exception.ErrorCode;</span></span>
+<span class="line"><span style="color:#6A737D">// ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * 全局响应封装类</span></span>
+<span class="line"><span style="color:#6A737D"> *</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> &#x3C;T></span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Data</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> BaseResponse</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#F97583">T</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">implements</span><span style="color:#B392F0"> Serializable</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> T data;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String message;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BaseResponse</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> code</span><span style="color:#E1E4E8">, T </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.code </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> code;</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> data;</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.message </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> message;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BaseResponse</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> code</span><span style="color:#E1E4E8">, T </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">(code, data, </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BaseResponse</span><span style="color:#E1E4E8">(ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">(errorCode.</span><span style="color:#B392F0">getCode</span><span style="color:#E1E4E8">(), </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, errorCode.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>响应工具类</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.common;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.yourprojectname.exception.ErrorCode;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * 响应工具类</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ResultUtils</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 成功</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> data</span><span style="color:#6A737D"> 数据</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> &#x3C;T></span><span style="color:#6A737D">  数据类型</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D"> 响应</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#F97583">T</span><span style="color:#E1E4E8">> BaseResponse&#x3C;</span><span style="color:#F97583">T</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">success</span><span style="color:#E1E4E8">(T </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> BaseResponse&#x3C;>(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, data, </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 失败</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> errorCode</span><span style="color:#6A737D"> 错误码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D"> 响应</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> BaseResponse&#x3C;>(errorCode);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 失败</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> code</span><span style="color:#6A737D">    错误码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> message</span><span style="color:#6A737D"> 错误信息</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D"> 响应</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> code</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> BaseResponse&#x3C;>(code, </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, message);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 失败</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> errorCode</span><span style="color:#6A737D"> 错误码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D"> 响应</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">?</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(ErrorCode </span><span style="color:#FFAB70">errorCode</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> BaseResponse&#x3C;>(errorCode.</span><span style="color:#B392F0">getCode</span><span style="color:#E1E4E8">(), </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, message);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>使用示例</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D">     * 用户注册</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">PostMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/register"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse</span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8">Long</span><span style="color:#F97583">></span><span style="color:#B392F0"> userRegister</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">RequestBody</span><span style="color:#E1E4E8"> UserRegisterRequest userRegisterRequest) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        ThrowUtils.</span><span style="color:#B392F0">throwIf</span><span style="color:#E1E4E8">(userRegisterRequest </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">, ErrorCode.PARAMS_ERROR);</span></span>
+<span class="line"><span style="color:#E1E4E8">        String userAccount </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getUserAccount</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        String userPassword </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getUserPassword</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        String checkPassword </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getCheckPassword</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        long</span><span style="color:#E1E4E8"> result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService.</span><span style="color:#B392F0">userRegister</span><span style="color:#E1E4E8">(userAccount, userPassword, checkPassword);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">success</span><span style="color:#E1E4E8">(result);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h3 id="13-aop切面设计角色权限设计">1.3. aop切面设计（角色权限设计）</h3>
+<blockquote>
+<p>根据不同的角色权限，在aop层拦截无权限Request</p>
+</blockquote>
+<p><strong>annotation/AuthCheck.java</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">interface</span><span style="color:#F97583"> AuthCheck</span><span style="color:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#6A737D">    /**</span></span>
 <span class="line"><span style="color:#6A737D">     * 必须要有某个用户角色</span></span>
 <span class="line"><span style="color:#6A737D">     */</span></span>
 <span class="line"><span style="color:#E1E4E8">    String mustRole </span><span style="color:#F97583">default</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<p><code>aop/AuthInterceptor.java</code></p>
+<p><strong>aop/AuthInterceptor.java</strong></p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"></span>
 <span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Aspect</span></span>
 <span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Component</span></span>
@@ -76,6 +327,127 @@
 <span class="line"><span style="color:#E1E4E8">        }</span></span>
 <span class="line"><span style="color:#6A737D">        // 通过权限校验，放行</span></span>
 <span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> joinPoint.</span><span style="color:#B392F0">proceed</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="二业务流程设计">二、业务流程设计</h2>
+<blockquote>
+<p>Mybatis Plus 下的业务流程：service -&gt; （impl） -&gt; controller</p>
+</blockquote>
+<ol>
+<li>sercice包下顶层的接口定义和接口方法的声明</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// UserService.java</span></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yourprojectname.service;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// import ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@author</span><span style="color:#6A737D"> yourname</span></span>
+<span class="line"><span style="color:#6A737D"> * @description 针对表【user(用户)】的数据库操作Service</span></span>
+<span class="line"><span style="color:#6A737D"> * @createDate 2024-12-09 20:03:03</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> UserService</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> IService</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#F97583">User</span><span style="color:#E1E4E8">> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 用户注册</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userAccount</span><span style="color:#6A737D">   用户账户</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userPassword</span><span style="color:#6A737D">  用户密码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> checkPassword</span><span style="color:#6A737D"> 校验密码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D"> 新用户 id</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    long</span><span style="color:#B392F0"> userRegister</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userAccount</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">userPassword</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">checkPassword</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<ol start="2">
+<li>serviceImpl 对接口方法的实现</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// UserServiceImpl.java</span></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yupi.yupicturebackend.service.impl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@author</span><span style="color:#6A737D"> yourname</span></span>
+<span class="line"><span style="color:#6A737D"> * @description 针对表【user(用户)】的数据库操作Service实现</span></span>
+<span class="line"><span style="color:#6A737D"> * @createDate 2024-12-09 20:03:03</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Service</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Slf4j</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UserServiceImpl</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ServiceImpl</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#F97583">UserMapper</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">User</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">        implements</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 用户注册</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userAccount</span><span style="color:#6A737D">   用户账户</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userPassword</span><span style="color:#6A737D">  用户密码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> checkPassword</span><span style="color:#6A737D"> 校验密码</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Override</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> long</span><span style="color:#B392F0"> userRegister</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userAccount</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">userPassword</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">checkPassword</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">        // 1. 校验参数</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (StrUtil.</span><span style="color:#B392F0">hasBlank</span><span style="color:#E1E4E8">(userAccount, userPassword, checkPassword)) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.PARAMS_ERROR, </span><span style="color:#9ECBFF">"参数为空"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (userAccount.</span><span style="color:#B392F0">length</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.PARAMS_ERROR, </span><span style="color:#9ECBFF">"用户账号过短"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (userPassword.</span><span style="color:#B392F0">length</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 8</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> checkPassword.</span><span style="color:#B392F0">length</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 8</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.PARAMS_ERROR, </span><span style="color:#9ECBFF">"用户密码过短"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">userPassword.</span><span style="color:#B392F0">equals</span><span style="color:#E1E4E8">(checkPassword)) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.PARAMS_ERROR, </span><span style="color:#9ECBFF">"两次输入的密码不一致"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#6A737D">        // 2. 检查用户账号是否和数据库中已有的重复</span></span>
+<span class="line"><span style="color:#E1E4E8">        QueryWrapper&#x3C;</span><span style="color:#F97583">User</span><span style="color:#E1E4E8">> queryWrapper </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> QueryWrapper&#x3C;>();</span></span>
+<span class="line"><span style="color:#E1E4E8">        queryWrapper.</span><span style="color:#B392F0">eq</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"userAccount"</span><span style="color:#E1E4E8">, userAccount);</span></span>
+<span class="line"><span style="color:#F97583">        long</span><span style="color:#E1E4E8"> count </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.baseMapper.</span><span style="color:#B392F0">selectCount</span><span style="color:#E1E4E8">(queryWrapper);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (count </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.PARAMS_ERROR, </span><span style="color:#9ECBFF">"账号重复"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#6A737D">        // 3. 密码一定要加密</span></span>
+<span class="line"><span style="color:#E1E4E8">        String encryptPassword </span><span style="color:#F97583">=</span><span style="color:#B392F0"> getEncryptPassword</span><span style="color:#E1E4E8">(userPassword);</span></span>
+<span class="line"><span style="color:#6A737D">        // 4. 插入数据到数据库中</span></span>
+<span class="line"><span style="color:#E1E4E8">        User user </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> User</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        user.</span><span style="color:#B392F0">setUserAccount</span><span style="color:#E1E4E8">(userAccount);</span></span>
+<span class="line"><span style="color:#E1E4E8">        user.</span><span style="color:#B392F0">setUserPassword</span><span style="color:#E1E4E8">(encryptPassword);</span></span>
+<span class="line"><span style="color:#E1E4E8">        user.</span><span style="color:#B392F0">setUserName</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"无名"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        user.</span><span style="color:#B392F0">setUserRole</span><span style="color:#E1E4E8">(UserRoleEnum.USER.</span><span style="color:#B392F0">getValue</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#F97583">        boolean</span><span style="color:#E1E4E8"> saveResult </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">save</span><span style="color:#E1E4E8">(user);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">saveResult) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BusinessException</span><span style="color:#E1E4E8">(ErrorCode.SYSTEM_ERROR, </span><span style="color:#9ECBFF">"注册失败，数据库错误"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> user.</span><span style="color:#B392F0">getId</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<ol start="3">
+<li>controller层的数据封装</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// UserController.java</span></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.yupi.yupicturebackend.controller;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestController</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RequestMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/user"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Resource</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> UserService userService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 用户注册</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">PostMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/register"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> BaseResponse&#x3C;</span><span style="color:#F97583">Long</span><span style="color:#E1E4E8">> </span><span style="color:#B392F0">userRegister</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">RequestBody</span><span style="color:#E1E4E8"> UserRegisterRequest </span><span style="color:#FFAB70">userRegisterRequest</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        ThrowUtils.</span><span style="color:#B392F0">throwIf</span><span style="color:#E1E4E8">(userRegisterRequest </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">, ErrorCode.PARAMS_ERROR);</span></span>
+<span class="line"><span style="color:#E1E4E8">        String userAccount </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getUserAccount</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        String userPassword </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getUserPassword</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        String checkPassword </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRegisterRequest.</span><span style="color:#B392F0">getCheckPassword</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        long</span><span style="color:#E1E4E8"> result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService.</span><span style="color:#B392F0">userRegister</span><span style="color:#E1E4E8">(userAccount, userPassword, checkPassword);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> ResultUtils.</span><span style="color:#B392F0">success</span><span style="color:#E1E4E8">(result);</span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 
