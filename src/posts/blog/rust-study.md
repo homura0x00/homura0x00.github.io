@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
 title: 'Rust 学习笔记'
-pubDate: 2025-11-06
+pubDate: 2026-02-12
 description: 'Rust 学习笔记'
 author: 'homura'
 tags: ["blogging", "hexo"]

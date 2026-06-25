@@ -1,16 +1,18 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'claude code 项目设计：宪法'
+title: 'AI原生应用开发工作流1：宪法'
 slug: 'ai-coding-constitution'
 pubDate: 2026-01-20
 description: '通过宪法的强制性条约约束ai遵守'
 author: 'homura'
-tags: ["blogging", "claude code", "vibe coding"]
+tags: ["blogging", "claude code", "vibe coding", "soft engineer"]
 ---
 
-# 宪法
+#### 宪法
 
-> 一种与。
+> 一种强制要求个人和 AI Agent 共同遵守的“原则契约”。
+
+### Go后端设计
 
 **constitution设计模版**
 
@@ -65,4 +67,41 @@ tags: ["blogging", "claude code", "vibe coding"]
 本宪法具有最高优先级，其效力高于任何`CLAUDE.md`或单次会话中的指令。任何计划（`plan.md`）在生成时，都必须首先进行“合宪性审查”。
 ```
 
+---
 ### 前端设计
+
+```markdown
+# vue-web-admin 项目开发宪法
+# Version: 1.0, Ratified: 2026-06-12
+
+本文件定义了本项目不可动摇的核心开发原则。所有AI Agent在进行技术规划和代码实现时，必须无条件遵循。
+
+---
+
+## 第一条：极简与轻量化原则 (Simplicity & Minimalism First)
+**核心：** 遵循现代前端的“奥卡姆剃刀”定律。绝不进行不必要的抽象，拒绝引入臃肿、非必需的第三方库。
+- **1.1 (YAGNI):** 只实现需求文档中明确要求的功能.拒绝过度设计。
+- **1.2 (原生与现代化优先):** 界面原子级组件（如 Button, Dialog, Input）必须无条件优先使用 `shadcn/ui`。严禁手写复杂的低层样式或引入其他重型 UI 库。
+- **1.3 (反过度封装):** 简单的 setup 逻辑和单文件组件（SFC）优于层层嵌套的 HOC（高阶组件）或过度抽象的无渲染组件。
+
+---
+
+## 第二条：测试先行铁律 (Test-First Imperative) - 不可协商
+**核心：** 所有新功能或Bug修复，都必须从编写一个（或多个）失败的测试开始。
+- **2.1 (TDD循环):** 严格遵循“Red-Green-Refactor”循环。
+- **2.2 (数据驱动驱动):** 元测试与接口测试必须优先采用参数化测试（Parameterised Tests）风格，利用 Vitest 的 `test.each` 或 `describe.each` 批量验证边界条件。
+- **2.3 (有价值的Mocks):** 避免对 Vue 组件进行过度 Mock 导致测试失去意义。优先测试组件的行为（Behavior）而非内部实现细节；涉及 API 请求时，优先使用 `msw` (Mock Service Worker) 或在测试层进行干净的 Context/Props 注入。
+
+---
+
+## 第三条：明确性原则 (Clarity and Explicitness)
+**核心：** 代码的首要目的是让人类易于理解。
+- **3.1 (类型安全):** **不可协商**：严格禁止使用 `any` 类型。所有组件的 Props、Emits、API 响应数据以及 Vuex/Pinia 状态都必须有明确的 TypeScript 类型定义（Interface/Type）。
+- **3.2 (无隐式副作用/全局污染):** 绝不允许使用全局 window 变量来传递状态。单例、全局配置或跨组件状态必须通过 Pinia 或 Vue 的 `provide/inject` 显式注入与追踪。
+- **3.3 (异常与异步处理):** 所有异步操作（`async/await`）必须有明确的错误捕获机制（`try-catch` 或 统一的 `Axios/Fetch` 拦截器），且错误提示必须对用户友好，日志记录必须对开发者清晰。
+
+---
+
+## 治理 (Governance)
+本宪法具有最高优先级，其效力高于任何`CLAUDE.md`或单次会话中的指令。
+```

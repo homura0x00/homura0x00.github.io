@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'Go Web应用设计：业务设计'
+title: 'Go Web应用设计：Go 版 DDD 领域驱动设计'
 pubDate: 2025-11-06
 description: '一篇关于 Go-Web 开发的通用设计。'
 author: 'homura'
@@ -9,7 +9,7 @@ tags: ["blogging", "hexo"]
 
 ### 技术栈
 
-- 开发框架：Gin + GormÂ
+- 开发框架：Gin + Gorm
 - 数据库： MySQL + Redis
 - 权限验证：OAuth
 
@@ -20,13 +20,13 @@ tags: ["blogging", "hexo"]
 |  |- cmd/
 |     |- server/main.go
 |
-|  |- configs/          # 配置文件
-|
 |  |- internal/
-|     |- ...            
-|     |- handler/       # 业务封装层（处理请求、组装response）
-|     |- service/       # 数据库数据操作层
+|     |- config/            
+|     |- user/       	# 用户模块 
+|     |- auth/       	# 权限校验层模块
 |     |- utils/         # JWT、response结构体、业务状态码、密码加密等自定义业务工具
+|	  |- ...
+|- ...
 ```
 
 #### DAL
