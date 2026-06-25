@@ -39,7 +39,8 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 | `"deploy": "bun run build && bunx gh-pages -d dist"` | Push Github Page |
 
-> 注意：Github Pages 默认使用 Jekyll 来处理站点，Jekyll 会忽略所有以 `_` 下划线开头的文件和目录。使用 `deploy` 命令时要加 `--nojekyll`。
+> 注意：Github Pages 默认使用 Jekyll 来处理站点，Jekyll 会忽略所有以 `_` 下划线开头的文件和目录。使用 `deploy` 命令时要加 `--nojekyll`;
+> 以及 `deploy` 该命令本身会和pnpm内置指令冲突，需要 `pnpm run deploy` 才能执行自定义的命令。
 
 ## 👀 Want to learn more?
 
