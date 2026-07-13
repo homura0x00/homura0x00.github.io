@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Menu } from 'lucide-react';
 import {
     Sheet,
@@ -18,32 +17,37 @@ export default function MobileNavigation() {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                    <Menu className="h-6 w-6" />
+                <Button variant="ghost" size="icon" className="md:hidden text-muted-foreground hover:text-foreground">
+                    <Menu className="h-5 w-5" />
                     <span className="sr-only">Toggle menu</span>
                 </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                    <SheetTitle className="text-left text-2xl font-bold">Menu</SheetTitle>
+            <SheetContent side="left" className="w-full sm:max-w-sm">
+                <SheetHeader className="px-4">
+                    <SheetTitle className="text-left text-sm tracking-[2px] text-muted-foreground font-normal uppercase">
+                        Menu
+                    </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-4 mt-8">
+                <nav className="flex flex-col gap-4 mt-6 px-4">
                     {navLists.map((nav) => (
-                        <div key={nav.name} className="border-b border-zinc-100 dark:border-zinc-800 pb-2">
+                        <div key={nav.name} className="border-b border-border pb-2">
                             {nav.children && nav.children.length > 0 ? (
                                 <Collapsible>
-                                    <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium py-2">
+                                    <CollapsibleTrigger className="flex items-center justify-between w-full text-sm font-medium py-2 text-foreground">
                                         {nav.name}
-                                        <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+                                        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200" />
                                     </CollapsibleTrigger>
                                     <CollapsibleContent className="pl-4 flex flex-col gap-2 mt-1">
                                         {nav.children.map((child) => (
                                             <a
                                                 key={child.href}
                                                 href={child.href}
-                                                className="text-zinc-600 dark:text-zinc-400 hover:text-primary py-1"
+                                                className="flex flex-col gap-0.5 py-2 px-1 rounded-md transition-colors hover:bg-accent/5"
                                             >
-                                                {child.name}
+                                                <span className="text-sm text-foreground">{child.name}</span>
+                                                {child.description && (
+                                                    <span className="text-xs text-muted-foreground/70">{child.description}</span>
+                                                )}
                                             </a>
                                         ))}
                                     </CollapsibleContent>
@@ -51,7 +55,7 @@ export default function MobileNavigation() {
                             ) : (
                                 <a
                                     href={nav.href}
-                                    className="text-lg font-medium block py-2 hover:text-primary"
+                                    className="text-sm font-medium block py-2 text-foreground hover:text-muted-foreground transition-colors"
                                 >
                                     {nav.name}
                                 </a>

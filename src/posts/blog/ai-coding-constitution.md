@@ -1,9 +1,9 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'AI原生应用开发工作流1：宪法'
+title: 'AI原生应用开发工作流1：开发规范'
 slug: 'ai-coding-constitution'
 pubDate: 2026-01-20
-description: '通过宪法的强制性条约约束ai遵守'
+description: '通过构建与AI遵守的共同契约，约束开发者和AI在开发过程中的行为？'
 author: 'homura'
 tags: ["blogging", "claude code", "vibe coding", "soft engineer"]
 ---

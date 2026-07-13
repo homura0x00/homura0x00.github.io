@@ -4,7 +4,7 @@ import MobileNavigation from "./MobileNavigation";
 import { HeaderModeToggle } from "./HeaderModeToggle";
 import MyAvatar from "@/components/MyAvatar";
 import { Button } from "./ui/button";
-import { DoorOpen } from "lucide-react";
+import { GithubIcon } from "./home-links";
 ---
 
 <header id="main-header" class="flex z-50 fixed left-0 right-0 top-0 items-center transition-all duration-300 border-b border-transparent">
@@ -29,10 +29,10 @@ import { DoorOpen } from "lucide-react";
         </div>
 
         <div class="flex-none">
-            <Button variant="outline" size="icon">
-                <!-- <a href="/login" target="_blank" rel="noopener noreferrer"> -->
-                    <DoorOpen />
-                <!-- </a> -->
+            <Button className="rounded-full" variant="outline" size="icon">
+                <a href="https://github.com/homura0x00" target="_blank" rel="noopener noreferrer">
+                    <GithubIcon />
+                </a>
             </Button>
         </div> <!-- 占位元素，保持右侧按钮位置 -->
 

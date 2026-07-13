@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/MarkdownPostLayout.astro
-title: 'React-Native: Expo框架应用设计'
+title: 'React-Native移动端应用开发'
 pubDate: 2025-12-10
-description: 'React-Native 移动端应用布局思路设计。'
+description: 'React-Native 的Expo框架快速开发流程'
 author: 'homura'
 tags: ["blogging", "RN"]
 ---
@@ -12,4 +12,5 @@ tags: ["blogging", "RN"]
 - react-native 语法基础
 - Expo 快速开发脚手架
 
-## 
+## 移动开发基础
+

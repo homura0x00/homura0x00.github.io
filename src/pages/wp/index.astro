@@ -1,26 +1,27 @@
 ---
-import Prose from "@/components/Prose.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection} from "astro:content";
 
 const allPosts = Object.values(import.meta.glob('../posts/writeup/*.md', { eager: true }));
-const pageTitle = "WirteUp"
+const pageTitle = "WriteUp"
 const posts = await getCollection("writeup");
 ---
 
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="mx-auto max-w-5xl px-6 md:px-10 py-10 min-h-screen">
-        <Prose>
-            <h2>WirteUp</h2>
-        </Prose>
-        <div class="mt-10">
-            <ul>
-                {posts.map((post: any) => <li><a href={`/wp/${post.id}`}>{post.data.title}</a></li>)}
-            </ul>
-        </div>
+    <div class="mx-auto max-w-5xl px-6 md:px-10 py-16 min-h-screen">
+        <h1 class="text-lg font-medium text-foreground mb-8">WP</h1>
+        <ul class="space-y-2">
+            {posts.map((post: any) => (
+                <li>
+                    <a
+                        href={`/wp/${post.id}`}
+                        class="block rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/5 hover:text-foreground"
+                    >
+                        {post.data.title}
+                    </a>
+                </li>
+            ))}
+        </ul>
     </div>
 </BaseLayout>
-
-<style>
-</style>

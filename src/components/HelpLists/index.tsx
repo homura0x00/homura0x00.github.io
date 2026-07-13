@@ -7,7 +7,7 @@ const helpLists = {
         { title: "关于站点", href: "/site", },
     ],
     connect: [
-        { title: "Bilibili", href: "https://www.bilibili.com", },
+        { title: "Bilibili", href: "https://space.bilibili.com/37937494", },
         { title: "Github", href: "https://github.com/homura0x00", },
     ]
 }

@@ -1,22 +1,30 @@
 "use client";
-import { Avatar } from "@radix-ui/react-avatar";
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
-const projects = [
+interface Project {
+    name: string;
+    description: string;
+    url: string;
+    createdAt?: string;
+}
+
+const projects: Project[] = [
     {
-        name: "项目一",
-        description: "这是第一个项目的描述。",
-        url: "#",
+        name: "智能桌宠",
+        description: "这是一个基于人工智能的桌面宠物应用，能够与用户进行互动，提供娱乐和陪伴。",
+        url: "https://github.com/homura0x00/pet-desktop",
+        createdAt: "2024.06",
     },
     {
         name: "项目二",
         description: "这是第二个项目的描述。",
         url: "#",
+        createdAt: "2024.01",
     },
     {
         name: "项目3",
-        description: "这是第三个项目的描述。",
+        description: "这是第三个项目的描述。\n第二行描述",
         url: "#",
+        createdAt: "2024.02",
     },
     {
         name: "项目4",
@@ -35,28 +43,93 @@ const projects = [
     },
 ];
 
-export default function ProjectList() {
+function ProjectCard({ project, isLast }: { project: Project; isLast: boolean }) {
     return (
+        <div
+            className={`group -mx-3 rounded-md px-3 py-3 transition-colors hover:bg-accent/5 ${
+                !isLast ? "mb-4 border-b border-border" : ""
+            } ${project.url ? "cursor-pointer" : ""}`}
+            onClick={() => project.url && window.open(project.url, "_blank", "noopener,noreferrer")}
+        >
+            <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-foreground">
+                    {project.name}
+                </span>
+                {project.createdAt && (
+                    <span className="ml-auto shrink-0 text-xs text-muted-foreground">
+                        {project.createdAt}
+                    </span>
+                )}
+            </div>
+            {project.description && (
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground transition-colors group-hover:text-foreground whitespace-pre-wrap">
+                    {project.description}
+                </p>
+            )}
+        </div>
+    );
+}
 
-        <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:shadow-xs sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:px-6">
-            {projects.map((project, index) => (
-                <Card key={index} className="@container/card">
-                    <a href={project.url} key={index} target="_blank" rel="noopener noreferrer">
-                        <CardHeader>
-                            <img
-                                src={`https://picsum.photos/seed/${index}/300/200`}
-                                alt={project.name}
-                                className="w-full h-32 object-cover rounded-t-md"
+export default function ProjectList() {
+    const half = Math.ceil(projects.length / 2);
+    const leftProjects = projects.slice(0, half);
+    const rightProjects = projects.slice(half);
+
+    return (
+        <div>
+            <header className="mb-8 flex items-baseline gap-3">
+                <span className="text-xs tracking-[2px] text-muted-foreground">
+                    PROJECTS
+                </span>
+                <span className="text-xs text-muted-foreground">—</span>
+                <a
+                    href="https://github.com/homura0x00"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                    github ↗
+                </a>
+            </header>
+
+            <main>
+                {/* Desktop: 2 columns */}
+                <div className="hidden gap-14 lg:grid lg:grid-cols-2">
+                    <div className="flex flex-col">
+                        {leftProjects.map((project, i) => (
+                            <ProjectCard
+                                key={project.name}
+                                project={project}
+                                isLast={i === leftProjects.length - 1}
                             />
-                            <span className="absolute top-2 left-2 bg-white/80 dark:bg-black/80 text-sm px-2 py-1 rounded">{project.name}</span>
-                        </CardHeader>
-                        <CardFooter>
-                            <CardTitle>{project.name}</CardTitle>
-                            <CardDescription>{project.description}</CardDescription>
-                        </CardFooter>
-                    </a>
-                </Card>
-            ))}
+                        ))}
+                    </div>
+                    <div className="flex flex-col">
+                        {rightProjects.map((project, i) => (
+                            <ProjectCard
+                                key={project.name}
+                                project={project}
+                                isLast={i === rightProjects.length - 1}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Mobile: 1 column */}
+                <div className="flex flex-col lg:hidden">
+                    {projects.map((project, i) => (
+                        <ProjectCard
+                            key={project.name}
+                            project={project}
+                            isLast={i === projects.length - 1}
+                        />
+                    ))}
+                </div>
+            </main>
+
+            <footer className="mt-7 border-t border-border pt-3 text-right text-xs text-muted-foreground">
+                {projects.length} projects
+            </footer>
         </div>
     );
 }

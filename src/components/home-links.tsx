@@ -16,7 +16,7 @@ const BilibiliIcon = ({ className }: { className?: string }) => (
     </svg>
 )
 
-const GithubIcon = ({ className }: { className?: string }) => (
+export const GithubIcon = ({ className }: { className?: string }) => (
     <svg 
         viewBox="0 0 24 24" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -34,7 +34,7 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const links = [
 	{
-		href: "https://www.bilibili.com",
+		href: "https://space.bilibili.com/37937494",
 		icon: <BilibiliIcon className="size-5" />,
         label: "Bilibili",
         bgClass: "bg-[#fb7299] border-[#fb7299] hover:bg-[#fb7299] active:bg-[#fb7299]",
