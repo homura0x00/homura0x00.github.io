@@ -44,13 +44,12 @@ const projects: Project[] = [
 ];
 
 function ProjectCard({ project, isLast }: { project: Project; isLast: boolean }) {
-    return (
-        <div
-            className={`group -mx-3 rounded-md px-3 py-3 transition-colors hover:bg-accent/5 ${
-                !isLast ? "mb-4 border-b border-border" : ""
-            } ${project.url ? "cursor-pointer" : ""}`}
-            onClick={() => project.url && window.open(project.url, "_blank", "noopener,noreferrer")}
-        >
+    const hasUrl = project.url && project.url !== "#";
+    const baseClass = "group -mx-3 rounded-md px-3 py-3 transition-colors" +
+        (!isLast ? " mb-4 border-b border-border" : "");
+
+    const content = (
+        <>
             <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-foreground">
                     {project.name}
@@ -66,8 +65,18 @@ function ProjectCard({ project, isLast }: { project: Project; isLast: boolean })
                     {project.description}
                 </p>
             )}
-        </div>
+        </>
     );
+
+    if (hasUrl) {
+        return (
+            <a href={project.url} target="_blank" rel="noopener noreferrer" className={baseClass + " block hover:bg-accent/5"}>
+                {content}
+            </a>
+        );
+    }
+
+    return <div className={baseClass}>{content}</div>;
 }
 
 export default function ProjectList() {

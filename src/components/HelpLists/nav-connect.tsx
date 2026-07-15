@@ -17,7 +17,7 @@ export function NavConnect({
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                <BreadcrumbItem className={"font-bold"}>Connect</BreadcrumbItem>
+                <BreadcrumbItem className="font-semibold text-foreground">Connect</BreadcrumbItem>
                 <BreadcrumbSeparator />
                 {items.map(item => (
                     <BreadcrumbItem key={item.title} className={"mr-1"}>

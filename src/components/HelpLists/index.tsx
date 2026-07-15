@@ -3,8 +3,8 @@ import {NavConnect} from "@/components/HelpLists/nav-connect.tsx";
 
 const helpLists = {
     about: [
-        { title: "关于我", href: "/about", },
-        { title: "关于站点", href: "/site", },
+        { title: "Me", href: "/about", },
+        { title: "WebSite", href: "https://github.com/homura0x00/homura0x00.github.io", },
     ],
     connect: [
         { title: "Bilibili", href: "https://space.bilibili.com/37937494", },

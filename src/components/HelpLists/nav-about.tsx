@@ -17,7 +17,7 @@ export function NavAbout({
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                <BreadcrumbItem className={"font-bold"}>About</BreadcrumbItem>
+                <BreadcrumbItem className="font-semibold text-foreground">About</BreadcrumbItem>
                 <BreadcrumbSeparator />
                 {items.map(item => (
                     <BreadcrumbItem key={item.title} className={"mr-1"}>
