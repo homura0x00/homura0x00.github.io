@@ -46,7 +46,7 @@ const links = [
         bgClass: "bg-zinc-900 border-zinc-900 dark:bg-zinc-700 dark:border-zinc-700 hover:bg-zinc-900 dark:hover:bg-zinc-700 active:bg-zinc-900 dark:active:bg-zinc-700",
 	},
 	{
-		href: "",
+		href: "/rss.xml",
 		icon: <Rss className="size-5" />,
         label: "RSS",
         bgClass: "bg-[#ee802f] border-[#ee802f] hover:bg-[#ee802f] active:bg-[#ee802f]",

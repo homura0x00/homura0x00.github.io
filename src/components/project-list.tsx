@@ -9,37 +9,34 @@ interface Project {
 
 const projects: Project[] = [
     {
-        name: "智能桌宠",
-        description: "这是一个基于人工智能的桌面宠物应用，能够与用户进行互动，提供娱乐和陪伴。",
-        url: "https://github.com/homura0x00/pet-desktop",
-        createdAt: "2024.06",
+        name: "在線簡歷編輯器",
+        description: "極簡簡歷的在線簡歷編輯器。",
+        url: "https://homura-resume-app.vercel.app",
+        createdAt: "2026.09",
     },
     {
-        name: "项目二",
-        description: "这是第二个项目的描述。",
-        url: "#",
-        createdAt: "2024.01",
+        name: "智能運維助手",
+        description: "以市面上'開源'的 harness agent 的研究性項目",
+        url: "",
+        createdAt: "2026.02",
     },
     {
-        name: "项目3",
-        description: "这是第三个项目的描述。\n第二行描述",
-        url: "#",
-        createdAt: "2024.02",
+        name: "user Center (Java)",
+        description: "Java Web 的练手项目。(backend)",
+        url: "https://github.com/homura0x00/java-user-center",
+        createdAt: "2025.11",
     },
     {
-        name: "项目4",
-        description: "这是第四个项目的描述。",
-        url: "#",
+        name: "分布式蜜罐項目",
+        description: "因項目小型化問題，死在半途和被遺忘在角落...",
+        url: "https://github.com/homura0x00/honey-trapX",
+        createdAt: "2025.04",
     },
     {
-        name: "项目5",
-        description: "这是第五个项目的描述。",
-        url: "#",
-    },
-    {
-        name: "项目6",
-        description: "这是第六个项目的描述。",
-        url: "#",
+        name: "API 開放平台",
+        description: "個人項目的API整合平台，用於統籌自己對外開放的服務",
+        url: "https://homura.me",
+        createdAt: "2025.11",
     },
 ];
 
