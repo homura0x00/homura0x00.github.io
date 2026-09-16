@@ -4,7 +4,7 @@ title: 'Git學習'
 pubDate: 2022-03-01
 description: '日常開發中Git的應用'
 author: 'homura'
-tags: ["blogging", "Git", "CI/CD"]
+tags: ["blogging", "Git", "CI-CD"]
 ---
 
 ## 常用命令
