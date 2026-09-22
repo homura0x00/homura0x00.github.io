@@ -4,7 +4,7 @@ title: 'Git學習'
 pubDate: 2022-03-01
 description: '日常開發中Git的應用'
 author: 'homura'
-tags: ["blogging", "Git", "CI-CD"]
+tags: ["blogging", "Git", "Version-Control"]
 ---
 
 ## 常用命令
@@ -22,6 +22,9 @@ git push origin 【你要push對應的分支】
 # 分支管理
 git branch 【要切換的分支】 # 如果不寫分支名則會列出基本分支
 git merge 【branchname】    # 注：是當前分支合併merge的分支，然後再 git commit 合併成功
+
+# 删除缓存、错误推送文件/目录
+git rm --cached [文件路径]
 
 ```
 
