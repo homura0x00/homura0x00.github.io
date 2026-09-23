@@ -12,11 +12,19 @@
 <span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> "給這次文件改動的備注消息記錄"</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 推送到遠程倉庫</span></span>
-<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> 【你要push對應的分支】</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> [远程仓库的名字] 【远程仓库的branch】</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 拉取最新源码和数据</span></span>
+<span class="line"><span style="color:#6A737D">## 1. 从远程仓库中下载新分支和数据</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> fetch</span><span style="color:#E1E4E8"> [要下载的远程仓库名]</span></span>
+<span class="line"><span style="color:#6A737D">## 2. 合并要更新的分支（本地当前的分支）</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> merge</span><span style="color:#E1E4E8"> [远程仓库分支]/[要合并的本地分支] </span><span style="color:#6A737D"># git merge origin/main</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 分支管理</span></span>
 <span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> branch</span><span style="color:#9ECBFF"> 【要切換的分支】</span><span style="color:#6A737D"> # 如果不寫分支名則會列出基本分支</span></span>
 <span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> merge</span><span style="color:#9ECBFF"> 【branchname】</span><span style="color:#6A737D">    # 注：是當前分支合併merge的分支，然後再 git commit 合併成功</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> branch</span><span style="color:#6A737D"> # 查看本地分支</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> branch</span><span style="color:#79B8FF"> -r</span><span style="color:#6A737D"> # 查看远程分支</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 删除缓存、错误推送文件/目录</span></span>
 <span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> rm</span><span style="color:#79B8FF"> --cached</span><span style="color:#E1E4E8"> [文件路径]</span></span></code></pre>
