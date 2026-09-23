@@ -17,11 +17,19 @@ git add .
 git commit -m "給這次文件改動的備注消息記錄"
 
 # 推送到遠程倉庫
-git push origin 【你要push對應的分支】
+git push [远程仓库的名字] 【远程仓库的branch】
+
+# 拉取最新源码和数据
+## 1. 从远程仓库中下载新分支和数据
+git fetch [要下载的远程仓库名]
+## 2. 合并要更新的分支（本地当前的分支）
+git merge [远程仓库分支]/[要合并的本地分支] # git merge origin/main
 
 # 分支管理
 git branch 【要切換的分支】 # 如果不寫分支名則會列出基本分支
 git merge 【branchname】    # 注：是當前分支合併merge的分支，然後再 git commit 合併成功
+git branch # 查看本地分支
+git branch -r # 查看远程分支
 
 # 删除缓存、错误推送文件/目录
 git rm --cached [文件路径]
