@@ -30,13 +30,13 @@ const projects: Project[] = [
         name: "分布式蜜罐項目",
         description: "因項目小型化問題，死在半途和被遺忘在角落...",
         url: "https://github.com/homura0x00/honey-trapX",
-        createdAt: "2025.04",
+        createdAt: "2025.09",
     },
     {
         name: "API 開放平台",
         description: "個人項目的API整合平台，用於統籌自己對外開放的服務",
         url: "https://homura.me",
-        createdAt: "2025.11",
+        createdAt: "2023.11",
     },
 ];
 
