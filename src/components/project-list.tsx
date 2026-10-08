@@ -9,20 +9,20 @@ interface Project {
 
 const projects: Project[] = [
     {
-        name: "在線簡歷編輯器",
-        description: "極簡簡歷的在線簡歷編輯器。",
-        url: "https://homura-resume-app.vercel.app",
+        name: "求职/招聘综合平台(private)",
+        description: "求职者的简历编辑、HR的候选人在线匹配器。",
+        url: "https://matchwork-ai.vercel.app/",
         createdAt: "2026.09",
     },
     {
-        name: "智能運維助手",
-        description: "以市面上'開源'的 harness agent 的研究性項目",
+        name: "智能運維助手(private)",
+        description: "harness agent 的研究性項目",
         url: "",
         createdAt: "2026.02",
     },
     {
-        name: "user Center (Java)",
-        description: "Java Web 的练手项目。(backend)",
+        name: "用户中心",
+        description: "Java Web 的练手项目，管理全平台用户信息的中台模块",
         url: "https://github.com/homura0x00/java-user-center",
         createdAt: "2025.11",
     },
