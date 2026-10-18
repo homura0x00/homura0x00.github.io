@@ -13,8 +13,18 @@ tags: ["language", "mojo"]
 - 强制显性声明数据类型(var)
 - 变量有类似rust的一次性所有权（不能重复声明？）
 
+
 ## 与Python的交互
 
 ### 导包
 
-只能在函数体内使用 `var np = import_model("numpy")`的形式进行导入，并且类型都为`PythonObject`。
+> 只能在函数体内使用 `var np = import_module("numpy")`的形式进行导入，类型都为`PythonObject`;
+> 如果不使用`try-except`处理异常，需要声明返回类型为`raises`。
+
+```mojo
+from std.python import Python
+
+def main() raises:
+    var np = Python.import_module("numpy")
+    # 然后就是python的写法
+```

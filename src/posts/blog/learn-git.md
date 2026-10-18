@@ -26,9 +26,9 @@ git fetch [要下载的远程仓库名]
 git merge [远程仓库分支]/[要合并的本地分支] # git merge origin/main
 
 # 分支管理
+git branch # 查看本地分支，以及当前所属分支
 git branch 【要切換的分支】 # 如果不寫分支名則會列出基本分支
 git merge 【branchname】    # 注：是當前分支合併merge的分支，然後再 git commit 合併成功
-git branch # 查看本地分支
 git branch -r # 查看远程分支
 
 # 删除缓存、错误推送文件/目录
