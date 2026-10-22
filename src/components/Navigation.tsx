@@ -27,7 +27,7 @@ export const navLists: NavItem[] = [
     { name: "Blog",
         children: [
         { name: "Post", description: "博客文章与技术笔记", href: "/blog" },
-        { name: "WriteUp", description: "CTF 解题报告与 WriteUp", href: "/wp" },
+        { name: "WriteUp", description: "CTF && Bug Bounty", href: "/wp" },
     ]},
     { name: "Project", href: "/projects" },
     { name: "About", href: "/about" },

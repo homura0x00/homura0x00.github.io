@@ -22,13 +22,13 @@ const projects: Project[] = [
     },
     {
         name: "用户中心",
-        description: "Java Web 的练手项目，管理全平台用户信息的中台模块",
+        description: "Java 技术栈学习项目，基于Spring boot 3 + Mybatic + MySQL构建的用户管理系统",
         url: "https://github.com/homura0x00/java-user-center",
         createdAt: "2025.11",
     },
     {
         name: "分布式蜜罐項目",
-        description: "因項目小型化問題，死在半途和被遺忘在角落...",
+        description: "研究性项目...",
         url: "https://github.com/homura0x00/honey-trapX",
         createdAt: "2025.09",
     },
