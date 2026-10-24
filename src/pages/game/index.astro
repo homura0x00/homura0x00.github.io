@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = Object.values(
+    import.meta.glob("../posts/game/*.md", { eager: true }),
+);
+const pageTitle = "Game";
+const posts = await getCollection("game");
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="mx-auto max-w-5xl px-6 md:px-10 py-16 min-h-screen">
+        <h1 class="text-lg font-medium text-foreground mb-8">Game</h1>
+        <ul class="space-y-2">
+            {posts.map((post: any) => (
+                <li>
+                    <a
+                        href={`/game/${post.id}`}
+                        class="block rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/5 hover:text-foreground"
+                    >
+                        {post.data.title}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</BaseLayout>
