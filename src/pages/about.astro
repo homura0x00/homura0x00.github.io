@@ -5,7 +5,7 @@ const pageTitle = "关于我";
 
 const identity = {
     firstName: "homura",
-    country: "Hongkong, China",
+    country: "HongKong, China",
     occupation: "码农",
     hobbies: ["打游戏", "看动漫"],
 };
@@ -14,8 +14,7 @@ const journey = [
     {
         year: "NOW",
         title: "AGI 工程师",
-        description:
-            "项目 AI驱动 TDD 流程设计，AI harness 工程",
+        description: "项目 AI驱动 TDD 流程设计，AI harness 工程",
     },
     {
         year: "2024~",
@@ -38,13 +37,12 @@ const skills = [
     "React/Vue3",
     "Nextjs",
     "Astro",
-    "Rust",  
+    "Rust",
 ];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <div class="mx-auto max-w-5xl px-6 md:px-10 py-16 min-h-screen">
-
         <span class="mb-12 block text-xs tracking-[2px] text-muted-foreground">
             ABOUT
         </span>
@@ -52,11 +50,11 @@ const skills = [
         <!-- Intro -->
         <div class="text-muted-foreground leading-relaxed space-y-2 mb-14">
             <p>
-                Hi，我是 <strong class="text-foreground">{identity.firstName}</strong>。一个顺心而为的独立开发者。
+                Hi，我是{" "}
+                <strong class="text-foreground">{identity.firstName}</strong>
+                。一个顺心而为的独立开发者。
             </p>
-            <p>
-                工具是手的延伸，AI 是思想的延伸。学会用它，而不是被它带着走。
-            </p>
+            <p class="text-sm italic">工具是手的延伸，AI 是思想的延伸。学会用它，而不是被它带着走。</p>
             <div class="flex items-center gap-1.5 pt-1">
                 <MapPin className="size-3.5" />
                 <span class="text-sm">{identity.country}</span>
@@ -71,9 +69,13 @@ const skills = [
                     <div class="flex gap-4">
                         <!-- 左侧：圆点 + 时间线 -->
                         <div class="relative flex flex-col items-center">
-                            <div class={`size-2 rounded-full shrink-0 mt-1.5 ${
-                                i === 0 ? "bg-transparent ring-2 ring-foreground" : "bg-primary/30"
-                            }`} />
+                            <div
+                                class={`size-2 rounded-full shrink-0 mt-1.5 ${
+                                    i === 0
+                                        ? "bg-transparent ring-2 ring-foreground"
+                                        : "bg-primary/30"
+                                }`}
+                            />
                             <div class="w-px flex-1 bg-border" />
                         </div>
                         <!-- 右侧：年份列 + 内容列 -->
@@ -82,7 +84,9 @@ const skills = [
                                 {item.year}
                             </span>
                             <div>
-                                <p class="text-sm font-medium text-foreground">{item.title}</p>
+                                <p class="text-sm font-medium text-foreground">
+                                    {item.title}
+                                </p>
                                 <p class="text-sm text-muted-foreground leading-relaxed mt-0.5">
                                     {item.description}
                                 </p>
@@ -98,7 +102,9 @@ const skills = [
                     <div class="w-px h-4 bg-border" />
                 </div>
                 <div class="flex-1 min-w-0 flex gap-3">
-                    <span class="w-10 shrink-0 text-sm text-muted-foreground/50 font-mono text-right tracking-[3px]">...</span>
+                    <span class="w-10 shrink-0 text-sm text-muted-foreground/50 font-mono text-right tracking-[3px]">
+                        ...
+                    </span>
                     <div></div>
                 </div>
             </div>
@@ -118,6 +124,5 @@ const skills = [
                 兴趣：{identity.hobbies[0]}、{identity.hobbies[1]}
             </p>
         )}
-
     </div>
 </BaseLayout>
