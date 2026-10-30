@@ -10,6 +10,10 @@ const posts = await getCollection("writeup");
 
 <BaseLayout pageTitle={pageTitle}>
     <div class="mx-auto max-w-5xl px-6 md:px-10 py-16 min-h-screen">
+        <span class="mb-8 block text-xs tracking-[2px] text-muted-foreground">
+            BLOG
+        </span>
+        
         <h1 class="text-lg font-medium text-foreground mb-8">WP</h1>
         <ul class="space-y-2">
             {posts.map((post: any) => (
