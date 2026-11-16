@@ -9,6 +9,12 @@ interface Project {
 
 const projects: Project[] = [
     {
+        name: "Windows 工具包",
+        description: "个人的工具集",
+        url: "",
+        createdAt: "~",
+    },
+    {
         name: "求职/招聘综合平台(private)",
         description: "求职者的简历编辑、HR的候选人在线匹配器。",
         url: "https://matchwork-ai.vercel.app/",
