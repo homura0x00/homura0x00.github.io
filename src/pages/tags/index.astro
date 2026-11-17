@@ -7,7 +7,7 @@ const writeupPosts = await getCollection("writeup");
 const allPosts = [...blogPosts, ...writeupPosts];
 
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())].filter(Boolean) as string[];
-const pageTitle = "标签索引";
+const pageTitle = "标签";
 
 // 统计每个标签的文章数，按数量降序排列
 const tagCounts: Record<string, number> = {};

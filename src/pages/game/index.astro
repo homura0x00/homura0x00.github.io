@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const allPosts = Object.values(
     import.meta.glob("../posts/game/*.md", { eager: true }),
 );
-const pageTitle = "Game";
+const pageTitle = "游戏开发";
 const posts = await getCollection("game");
 ---
 

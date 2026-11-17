@@ -50,6 +50,7 @@ function ProjectCard({ project, isLast }: { project: Project; isLast: boolean })
     const hasUrl = project.url && project.url !== "#";
     const baseClass = "group -mx-3 rounded-md px-3 py-3 transition-colors" +
         (!isLast ? " mb-4 border-b border-border" : "");
+        // (" mb-4 border-b border-border");
 
     const content = (
         <>
